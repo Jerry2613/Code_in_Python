@@ -1,0 +1,24 @@
+
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  simple:
+    format: '%(asctime)s  %(name)-30s %(levelname)-7s %(message)s'
+
+handlers:
+    file:
+        class: logging.handlers.RotatingFileHandler
+        formatter: simple
+        filename: logging.conf
+
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple
+ #       stream: ext//sys.stdout
+
+root:
+    level: DEBUG
+    handlers:
+           [file, console]

@@ -1,0 +1,127 @@
+//
+// Copyright (c) 2007-2017 Dell Inc. All rights reserved. This
+// software and associated documentation (if any) is furnished
+// under a license and may only be used or copied in accordance
+// with the terms of the license. Except as permitted by such
+// license, no part of this software or documentation may be
+// reproduced, stored in a retrieval system, or transmitted in any
+// form or by any means without the express written consent of
+// Dell Inc.
+//
+// SecureBootExpertKey
+
+#include <Library/DellSetupVfrLib.h>
+#include <Guid/DellPropertyIds.h>
+#include <Guid/ExpertKeyVfr.h>
+#include <Guid/GeneralVfr.h>
+
+#define EXPERT_KEY_CLASS        0x0
+#define EXPERT_KEY_SUBCLASS     0x0
+
+formset
+  guid      = EXPERT_KEY_FORMSET_GUID,
+  title     = STRING_TOKEN(STR_EXPERT_KEY),
+  help      = STRING_TOKEN(STR_EXPERT_KEY_HELP),
+  classguid = EXPERT_KEY_FORMSET_GUID,
+  class     = EXPERT_KEY_CLASS,
+  subclass  = EXPERT_KEY_SUBCLASS,
+
+//
+// Common Setup Data Variable Store
+//
+  varstore COMMON_SETUP_DATA,
+    name = CommonSetupData,
+    guid = COMMON_SETUP_GUID;
+
+//
+// Secure Boot Form Set Variable Store
+//
+  varstore EXPERT_KEY_DATA,
+    name = ExpertKeyData,
+    guid = EXPERT_KEY_FORMSET_GUID;
+
+//
+// Default store for the Secure Boot Form Set
+//
+  defaultstore ExpertKeyStandardDefault,
+    prompt      = STRING_TOKEN(STR_STANDARD_DEFAULT_PROMPT),
+    attribute   = EFI_HII_DEFAULT_CLASS_STANDARD;
+
+// ******************************
+// * Expert Key Management Form *
+// ******************************
+disableif (get (ExpertKeyData.Disable) == 1);
+  form formid = EXPERT_KEY_FORM_ID,
+  title = STRING_TOKEN(STR_EXPERT_KEY);
+
+  grayoutif (ideqval CommonSetupData.AdminLockOut == 1);
+    checkbox
+      varid  = ExpertKeyData.Option,
+      questionid = ENABLE_CHECK_BOX_Q_ID,
+      prompt = STRING_TOKEN(STR_CUSTOM_MODE),
+      help   = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+      flags  = RESET_REQUIRED | INTERACTIVE,
+    endcheckbox;
+
+    subtitle text = STRING_TOKEN(STR_NEW_LINE_STRING);
+    subtitle text = STRING_TOKEN(STR_CUSTOM_MODE_LABEL);
+
+    grayoutif (ideqval ExpertKeyData.Option == 0);
+      oneof
+        varid  = ExpertKeyData.Mode,
+        questionid = MODE_Q_ID,
+        prompt = STRING_TOKEN(STR_CUSTOM_MODE_SELECT),
+        help   = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+        flags  = INTERACTIVE,
+        option text = STRING_TOKEN(STR_PK_CUSTOM_MODE), value = PK_MODE, flags = RESET_REQUIRED;
+        option text = STRING_TOKEN(STR_KEK_CUSTOM_MODE), value = KEK_MODE, flags = RESET_REQUIRED;
+        option text = STRING_TOKEN(STR_DB_CUSTOM_MODE), value = DB_MODE, flags = RESET_REQUIRED;
+        option text = STRING_TOKEN(STR_DBX_CUSTOM_MODE), value = DBX_MODE, flags = RESET_REQUIRED;
+      endoneof;
+
+      subtitle text = STRING_TOKEN(STR_NEW_LINE_STRING);
+
+      grayoutif (ideqval ExpertKeyData.GreyOutSave == 1);
+        text
+          help = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+          text = STRING_TOKEN(STR_SAVE_TO_FILE),
+          flags = RESET_REQUIRED | INTERACTIVE, key = SAVE_TO_FILE_Q_ID;
+      endif;
+
+      text
+        help = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+        text = STRING_TOKEN(STR_REPLACE_FILE),
+        flags = RESET_REQUIRED | INTERACTIVE, key = REPLACE_FILE_Q_ID;
+
+      grayoutif (ideqval ExpertKeyData.Mode == PK_MODE);
+        text
+          help = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+          text = STRING_TOKEN(STR_APPEND_FILE),
+          flags = RESET_REQUIRED | INTERACTIVE, key = APPEND_FILE_Q_ID;
+      endif;
+
+      text
+        help = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+        text = STRING_TOKEN(STR_DELETE),
+        flags = RESET_REQUIRED | INTERACTIVE, key = DELETE_FILE_Q_ID;
+
+      subtitle text = STRING_TOKEN(STR_NEW_LINE_STRING);
+
+      text
+        help = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+        text = STRING_TOKEN(STR_RESET_ALL_KEYS),
+        flags = RESET_REQUIRED | INTERACTIVE, key = RESET_ALL_KEYS_Q_ID;
+
+      text
+        help = STRING_TOKEN(STR_CUSTOM_MODE_HELP),
+        text = STRING_TOKEN(STR_DELETE_ALL_KEYS),
+        flags = RESET_REQUIRED | INTERACTIVE, key = DELETE_ALL_KEYS_Q_ID;
+    endif;
+
+  endif;
+
+  endform;
+endif;
+// ********************************************************
+
+endformset;

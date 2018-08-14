@@ -1,0 +1,12 @@
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\DellAutoOsRecovery\DellAutoOsRecovery.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\AdditionSetupData.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\AdvancedBoot\DellAdvancedBootSetup.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\General\DellGeneralSetup.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\GeneralDrives\DellGeneralDrivesSetup.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\PostBehavior\DellPostBehavior.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\PowerManagement\DellPmSetup.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\SetupPrep\DellSetup.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\SysConfig\DellSysConfig.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\Wireless\DellWirelessSetup.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2\COREMOD\OVERRIDE\DellPkg\DellFamilyPkgs\FamilyPolicy\SetupDefault.sd
+c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\ODMEM\COREMOD\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\Security\DellSecuritySetup.sd

@@ -1,0 +1,2430 @@
+Numlock 1 
+StartOfSetupData 0 
+IrmtHwNotification 1 
+IrmtState 1 
+PciExpNative 1 
+NativeAspmEnable 2 
+PtidSupport 1 
+AcpiDebug 0 
+AcpiDebugAddress 0 0 0 0 
+PciDelayOptimizationEcr 0 
+WakeOnRTCS5 0 
+RTCWakeupDate 0 
+RTCWakeupTimeHour 0 
+RTCWakeupTimeMinute 0 
+RTCWakeupTimeSecond 0 
+PeciAccessMethod 0 
+LowPowerS0Idle 0 
+PepCpu 1 
+PepGfx 1 
+PepSataContraints 0 
+PepUart 1 
+PepI2c0 1 
+PepI2c1 1 
+PepI2c2 1 
+PepI2c3 1 
+PepI2c4 1 
+PepI2c5 1 
+PepSpi 1 
+PepXhci 1 
+PepAudio 1 
+PepEmmc 1 
+PepSdxc 1 
+CSNotifyEC 1 
+CSDebugLightEC 0 
+EcLowPowerMode 0 
+EcDebugLed 0 
+ECBaseCsPwrPolicy 0 
+SensorStandby 0 
+PL1LimitCS 0 
+PL1LimitCSValue 148 17 
+TenSecondPowerButtonEnable 0 
+LpitResidencyCounter 0 
+IrmtConfiguration 0 
+LoadSSDTFromFile 0 
+CdClock 3 
+SensorHubType 0 
+DebugUsbUart 0 
+UsbSensorHub 0 
+FirmwareConfiguration 2 
+PchSkyCamPortATermOverride 0 
+PchSkyCamPortBTermOverride 0 
+PchSkyCamPortCTermOverride 0 
+PchSkyCamPortDTermOverride 0 
+PchSkyCamPortATrimEnable 1 
+PchSkyCamPortBTrimEnable 1 
+PchSkyCamPortCTrimEnable 1 
+PchSkyCamPortDTrimEnable 1 
+PchSkyCamPortACtleEnable 1 
+PchSkyCamPortBCtleEnable 1 
+PchSkyCamPortCDCtleEnable 1 
+PchSkyCamPortADataTrimValue 187 187 
+PchSkyCamPortBDataTrimValue 187 187 
+PchSkyCamPortCDDataTrimValue 204 204 
+PchSkyCamPortACtleCapValue 14 
+PchSkyCamPortBCtleCapValue 14 
+PchSkyCamPortCDCtleCapValue 14 
+PchSkyCamPortACtleResValue 13 
+PchSkyCamPortBCtleResValue 13 
+PchSkyCamPortCDCtleResValue 13 
+PchSkyCamPortAClkTrimValue 10 
+PchSkyCamPortBClkTrimValue 10 
+PchSkyCamPortCClkTrimValue 9 
+PchSkyCamPortDClkTrimValue 10 
+SkyCam_ControlLogic0 1 
+SkyCam_ControlLogic1 0 
+SkyCam_ControlLogic2 0 
+SkyCam_ControlLogic3 0 
+SkyCam_Link0 1 
+SkyCam_Link1 1 
+SkyCam_Link2 0 
+SkyCam_Link3 0 
+SkyCam_LanesClkDiv 0 
+SkyCam_ControlLogic0_Type 2 
+SkyCam_ControlLogic0_CrdVersion 80 
+SkyCam_ControlLogic0_GpioPinsEnabled 2 
+SkyCam_ControlLogic0_I2cChannel 2 
+SkyCam_ControlLogic0_I2cAddress 77 0 
+SkyCam_ControlLogic0_Pld 41 
+SkyCam_ControlLogic0_GpioGroupPadNumber ARRAY [22] [11] [11] [11] 
+SkyCam_ControlLogic0_GpioGroupNumber ARRAY [3] [3] [3] [3] 
+SkyCam_ControlLogic0_GpioFunction ARRAY [0] [0] [12] [0] 
+SkyCam_ControlLogic0_GpioActiveValue ARRAY [1] [1] [1] [1] 
+SkyCam_ControlLogic0_GpioInitialValue ARRAY [0] [0] [0] [0] 
+SkyCam_ControlLogic1_Type 2 
+SkyCam_ControlLogic1_CrdVersion 48 
+SkyCam_ControlLogic1_GpioPinsEnabled 2 
+SkyCam_ControlLogic1_I2cChannel 3 
+SkyCam_ControlLogic1_I2cAddress 73 0 
+SkyCam_ControlLogic1_Pld 41 
+SkyCam_ControlLogic1_GpioGroupPadNumber ARRAY [22] [11] [11] [11] 
+SkyCam_ControlLogic1_GpioGroupNumber ARRAY [3] [3] [3] [3] 
+SkyCam_ControlLogic1_GpioFunction ARRAY [0] [0] [0] [0] 
+SkyCam_ControlLogic1_GpioActiveValue ARRAY [1] [1] [1] [1] 
+SkyCam_ControlLogic1_GpioInitialValue ARRAY [0] [0] [0] [0] 
+SkyCam_ControlLogic2_Type 2 
+SkyCam_ControlLogic2_CrdVersion 48 
+SkyCam_ControlLogic2_GpioPinsEnabled 2 
+SkyCam_ControlLogic2_I2cChannel 3 
+SkyCam_ControlLogic2_I2cAddress 73 0 
+SkyCam_ControlLogic2_Pld 41 
+SkyCam_ControlLogic2_GpioGroupPadNumber ARRAY [22] [11] [11] [11] 
+SkyCam_ControlLogic2_GpioGroupNumber ARRAY [3] [3] [3] [3] 
+SkyCam_ControlLogic2_GpioFunction ARRAY [0] [0] [0] [0] 
+SkyCam_ControlLogic2_GpioActiveValue ARRAY [1] [1] [1] [1] 
+SkyCam_ControlLogic2_GpioInitialValue ARRAY [0] [0] [0] [0] 
+SkyCam_ControlLogic3_Type 2 
+SkyCam_ControlLogic3_CrdVersion 48 
+SkyCam_ControlLogic3_GpioPinsEnabled 2 
+SkyCam_ControlLogic3_I2cChannel 3 
+SkyCam_ControlLogic3_I2cAddress 73 0 
+SkyCam_ControlLogic3_Pld 41 
+SkyCam_ControlLogic3_GpioGroupPadNumber ARRAY [22] [11] [11] [11] 
+SkyCam_ControlLogic3_GpioGroupNumber ARRAY [3] [3] [3] [3] 
+SkyCam_ControlLogic3_GpioFunction ARRAY [0] [0] [0] [0] 
+SkyCam_ControlLogic3_GpioActiveValue ARRAY [1] [1] [1] [1] 
+SkyCam_ControlLogic3_GpioInitialValue ARRAY [0] [0] [0] [0] 
+SkyCam_Link0_SensorModel 8 
+SkyCam_Link0_UserHid ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link0_CameraPhysicalLocation 97 
+SkyCam_Link0_ModuleName ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link0_I2cDevicesEnabled 6 
+SkyCam_Link0_I2cChannel 4 
+SkyCam_Link0_I2cAddress ARRAY [54, 0] [12, 0] [80, 0] [81, 0] [82, 0] [83, 0] [84, 0] [85, 0] [86, 0] [87, 0] [88, 0] [89, 0] 
+SkyCam_Link0_I2cDeviceType ARRAY [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [0] 
+SkyCam_Link0_DriverData_Version 0 
+SkyCam_Link0_DriverData_CrdVersion 80 
+SkyCam_Link0_DriverData_LaneUsed 2 
+SkyCam_Link0_DriverData_EepromType 8 
+SkyCam_Link0_DriverData_VcmType 0 
+SkyCam_Link0_DriverData_CustomData ARRAY [0] [0] [0] [0] 
+SkyCam_Link0_DriverData_Mclk 0 248 36 1 
+SkyCam_Link0_DriverData_ControlLogic 0 
+SkyCam_Link0_DriverData_FlashSupport 2 
+SkyCam_Link0_DriverData_Degree 0 
+SkyCam_Link1_SensorModel 3 
+SkyCam_Link1_UserHid ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link1_CameraPhysicalLocation 105 
+SkyCam_Link1_ModuleName ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link1_I2cDevicesEnabled 6 
+SkyCam_Link1_I2cChannel 2 
+SkyCam_Link1_I2cAddress ARRAY [16, 0] [12, 0] [80, 0] [81, 0] [82, 0] [83, 0] [84, 0] [85, 0] [86, 0] [87, 0] [88, 0] [89, 0] 
+SkyCam_Link1_I2cDeviceType ARRAY [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [12] 
+SkyCam_Link1_DriverData_Version 0 
+SkyCam_Link1_DriverData_CrdVersion 80 
+SkyCam_Link1_DriverData_LaneUsed 4 
+SkyCam_Link1_DriverData_EepromType 8 
+SkyCam_Link1_DriverData_VcmType 2 
+SkyCam_Link1_DriverData_CustomData ARRAY [0] [0] [0] [0] 
+SkyCam_Link1_DriverData_Mclk 0 248 36 1 
+SkyCam_Link1_DriverData_ControlLogic 0 
+SkyCam_Link1_DriverData_FlashSupport 3 
+SkyCam_Link1_DriverData_Degree 0 
+SkyCam_Link2_SensorModel 0 
+SkyCam_Link2_UserHid ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link2_CameraPhysicalLocation 105 
+SkyCam_Link2_ModuleName ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link2_I2cDevicesEnabled 6 
+SkyCam_Link2_I2cChannel 2 
+SkyCam_Link2_I2cAddress ARRAY [16, 0] [14, 0] [80, 0] [81, 0] [82, 0] [83, 0] [84, 0] [85, 0] [86, 0] [87, 0] [88, 0] [89, 0] 
+SkyCam_Link2_I2cDeviceType ARRAY [0] [1] [2] [3] [4] [5] [6] [7] [0] [0] [0] [0] 
+SkyCam_Link2_DriverData_Version 0 
+SkyCam_Link2_DriverData_CrdVersion 48 
+SkyCam_Link2_DriverData_LaneUsed 4 
+SkyCam_Link2_DriverData_EepromType 8 
+SkyCam_Link2_DriverData_VcmType 3 
+SkyCam_Link2_DriverData_CustomData ARRAY [0] [0] [0] [0] 
+SkyCam_Link2_DriverData_Mclk 0 54 110 1 
+SkyCam_Link2_DriverData_ControlLogic 255 
+SkyCam_Link2_DriverData_FlashSupport 0 
+SkyCam_Link2_DriverData_Degree 0 
+SkyCam_Link3_SensorModel 1 
+SkyCam_Link3_UserHid ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link3_CameraPhysicalLocation 105 
+SkyCam_Link3_ModuleName ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+SkyCam_Link3_I2cDevicesEnabled 6 
+SkyCam_Link3_I2cChannel 3 
+SkyCam_Link3_I2cAddress ARRAY [16, 0] [12, 0] [80, 0] [81, 0] [82, 0] [83, 0] [84, 0] [85, 0] [86, 0] [87, 0] [88, 0] [89, 0] 
+SkyCam_Link3_I2cDeviceType ARRAY [0] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [12] 
+SkyCam_Link3_DriverData_Version 0 
+SkyCam_Link3_DriverData_CrdVersion 48 
+SkyCam_Link3_DriverData_LaneUsed 4 
+SkyCam_Link3_DriverData_EepromType 8 
+SkyCam_Link3_DriverData_VcmType 3 
+SkyCam_Link3_DriverData_CustomData ARRAY [0] [0] [0] [0] 
+SkyCam_Link3_DriverData_Mclk 0 54 110 1 
+SkyCam_Link3_DriverData_ControlLogic 255 
+SkyCam_Link3_DriverData_FlashSupport 0 
+SkyCam_Link3_DriverData_Degree 0 
+PchI2c0SensorDevice 0 
+PchI2c0TouchpadBusAddress 0 
+PchI2c0TouchpadHidAddress 0 0 
+PchI2c0TouchpadSpeed 0 
+PchI2c0SensorIrqMode 1 
+PchI2c1SensorDevice 0 
+PchI2c1SensorIrqMode 1 
+PchI2c1TouchpanelBusAddress 0 
+PchI2c1TouchpanelHidAddress 0 0 
+PchI2c1TouchpanelSpeed 0 
+PchI2c1WacompanelSpeed 1 
+PchI2c2SensorDevice 0 
+PchI2c3SensorDevice 0 
+PchI2c4SensorDevice 0 
+PchSpi1SensorDevice 0 
+PchSpi1SensorIrqMode 1 
+PchUart0SensorDevice 0 
+PchUart0SensorIrqMode 0 
+PchI2c5SensorDevice 0 
+PchUart1SensorDevice 0 
+PchUart2SensorDevice 0 
+PchI2cWittDevice 0 
+PchI2cWittVersion 1 
+PchUartUtkDevice 0 
+GnssModel 0 
+GnssConnection 0 
+PchFpsEnable 2 
+PchSerialIoUseTimingParameters 0 
+PchSerialIoTimingSSHI 16 2 
+PchSerialIoTimingSSLI 128 2 
+PchSerialIoTimingSSDI 30 0 
+PchSerialIoTimingFMHI 128 0 
+PchSerialIoTimingFMLI 160 0 
+PchSerialIoTimingFMDI 30 0 
+PchSerialIoTimingFPHI 48 0 
+PchSerialIoTimingFPLI 64 0 
+PchSerialIoTimingFPDI 30 0 
+PchSerialIoTimingM0CI 200 0 
+PchSerialIoTimingM1CI 208 7 
+PchSerialIoTimingM0CS 200 0 
+PchSerialIoTimingM1CS 208 7 
+PchSerialIoTimingM0CU 200 0 
+PchSerialIoTimingM1CU 200 0 
+Ps2KbMsEnable 1 
+TouchPanelMuxSelector 0 
+BtUartMuxSelector 0 
+BtWirelessChargingMode 0 
+Ac1TripPoint 55 
+Ac0TripPoint 71 
+Ac1FanSpeed 75 
+Ac0FanSpeed 100 
+PassiveThermalTripPoint 95 
+CriticalThermalTripPoint 119 
+PassiveTc1Value 1 
+PassiveTc2Value 5 
+PassiveTspValue 10 
+DisableActiveTripPoints 1 
+DisablePassiveTripPoints 0 
+DisableCriticalTripPoints 1 
+PmicVccLevel 7 
+PmicVddqLevel 8 
+TwoComponents 0 
+ThermalDeviceEnable 1 
+CPUTempReadEnable 1 
+CPUEnergyReadEnable 1 
+PCHTempReadEnable 1 
+AlertEnableLock 0 
+PchAlert 0 
+DimmAlert 0 
+CpuTemp 72 
+CpuFanSpeed 65 
+EnableDptf 0 
+EnableDCFG 0 
+EnableSaDevice 1 
+ActiveThermalTripPointSA 86 
+PassiveThermalTripPointSA 89 
+CriticalThermalTripPointSA 98 
+CriticalThermalTripPointSaS3 95 
+HotThermalTripPointSA 97 
+ThermalSamplingPeriodSA 0 
+PpccStepSize 244 1 0 0 
+LPOEnable 1 
+LPOStartPState 16 
+LPOStepSize 50 
+LPOPowerControlSetting 1 
+LPOPerformanceControlSetting 2 
+MinPowerLimit0 125 0 
+MinPowerLimit1 125 0 
+MinPowerLimit2 125 0 
+EnableCtdpPolicy 1 
+EnableLpmPolicy 0 
+CurrentLowPowerMode 0 
+EnableCurrentExecutionUnit 1 
+TargetGfxFreq 144 1 
+EnableMemoryDevice 0 
+ActiveThermalTripPointTMEM 0 
+PassiveThermalTripPointTMEM 0 
+CriticalThermalTripPointTMEM 0 
+CriticalThermalTripPointTmemS3 0 
+HotThermalTripPointTMEM 0 
+ThermalSamplingPeriodTMEM 0 
+EnableFan1Device 1 
+EnableFan2Device 1 
+EnableDisplayParticipant 0 
+DisplayDepthUpperLimit 80 
+DisplayDepthLowerLimit 30 
+EnableWifiParticipant 0 
+ActiveThermalTripPointWifi 63 
+PassiveThermalTripPointWifi 71 
+CriticalThermalTripPointWifi 103 
+CriticalThermalTripPointWifiS3 100 
+HotThermalTripPointWifi 95 
+EnableWWANParticipant 0 
+ActiveThermalTripPointWWAN 63 
+PassiveThermalTripPointWWAN 71 
+CriticalThermalTripPointWWAN 103 
+CriticalThermalTripPointWwanS3 100 
+HotThermalTripPointWWAN 95 
+EnableWGigParticipant 0 
+ActiveThermalTripPointWGig 0 
+PassiveThermalTripPointWGig 0 
+CriticalThermalTripPointWGig 0 
+CriticalThermalTripPointWGigS3 0 
+HotThermalTripPointWGig 0 
+EnableChargerParticipant 0 
+EnablePowerParticipant 0 
+PowerParticipantPollingRate 0 0 
+EnablePowerBossPolicy 0 
+EnablePerCParticipant 0 
+ActiveThermalTripPointPerC 63 
+PassiveThermalTripPointPerC 71 
+CriticalThermalTripPointPerC 103 
+CriticalThermalTripPointPerCS3 97 
+HotThermalTripPointPerC 100 
+EnableIvCamParticipant 0 
+ActiveThermalTripPointIvCam 63 
+PassiveThermalTripPointIvCam 71 
+CriticalThermalTripPointIvCam 103 
+CriticalThermalTripPointIvCamS3 97 
+HotThermalTripPointIvCam 100 
+EnableStorageParticipant 0 
+ActiveThermalTripPointStrg 63 
+PassiveThermalTripPointStrg 71 
+CriticalThermalTripPointStrg 103 
+CriticalThermalTripPointStrgS3 100 
+HotThermalTripPointStrg 95 
+EnableVS1Participant 0 
+ActiveThermalTripPointVS1 80 
+PassiveThermalTripPointVS1 55 
+CriticalThermalTripPointVS1 100 
+CriticalThermalTripPointVS1S3 95 
+HotThermalTripPointVS1 97 
+EnableVS2Participant 0 
+ActiveThermalTripPointVS2 80 
+PassiveThermalTripPointVS2 55 
+CriticalThermalTripPointVS2 100 
+CriticalThermalTripPointVS2S3 95 
+HotThermalTripPointVS2 97 
+EnableSen1Participant 0 
+ActiveThermalTripPointSen1 63 
+PassiveThermalTripPointSen1 71 
+CriticalThermalTripPointSen1 103 
+CriticalThermalTripPointSen1S3 100 
+HotThermalTripPointSen1 100 
+SensorSamplingPeriodSen1 0 
+EnableSen2Participant 0 
+ActiveThermalTripPointSen2 63 
+PassiveThermalTripPointSen2 71 
+CriticalThermalTripPointSen2 103 
+CriticalThermalTripPointSen2S3 100 
+HotThermalTripPointSen2 100 
+SensorSamplingPeriodSen2 0 
+EnableSen3Participant 0 
+ActiveThermalTripPointSen3 63 
+PassiveThermalTripPointSen3 71 
+CriticalThermalTripPointSen3 103 
+CriticalThermalTripPointSen3S3 100 
+HotThermalTripPointSen3 100 
+SensorSamplingPeriodSen3 0 
+EnableSen4Participant 0 
+ActiveThermalTripPointSen4 63 
+PassiveThermalTripPointSen4 71 
+CriticalThermalTripPointSen4 103 
+CriticalThermalTripPointSen4S3 100 
+HotThermalTripPointSen4 95 
+SensorSamplingPeriodSen4 0 
+EnableSen5Participant 0 
+ActiveThermalTripPointSen5 110 
+PassiveThermalTripPointSen5 115 
+CriticalThermalTripPointSen5 127 
+CriticalThermalTripPointSen5S3 124 
+HotThermalTripPointSen5 121 
+SensorSamplingPeriodSen5 0 
+EnableSen6Participant 0 
+ActiveThermalTripPointSen6 0 
+PassiveThermalTripPointSen6 0 
+CriticalThermalTripPointSen6 0 
+CriticalThermalTripPointSen6S3 0 
+HotThermalTripPointSen6 0 
+SensorSamplingPeriodSen6 0 
+EnableSen7Participant 0 
+ActiveThermalTripPointSen7 0 
+PassiveThermalTripPointSen7 0 
+CriticalThermalTripPointSen7 0 
+CriticalThermalTripPointSen7S3 0 
+HotThermalTripPointSen7 0 
+SensorSamplingPeriodSen7 0 
+EnableSen8Participant 0 
+ActiveThermalTripPointSen8 0 
+PassiveThermalTripPointSen8 0 
+CriticalThermalTripPointSen8 0 
+CriticalThermalTripPointSen8S3 0 
+HotThermalTripPointSen8 0 
+SensorSamplingPeriodSen8 0 
+EnableGen1Participant 0 
+ActiveThermalTripPointGen1 63 
+PassiveThermalTripPointGen1 71 
+CriticalThermalTripPointGen1 103 
+CriticalThermalTripPointGen1S3 100 
+HotThermalTripPointGen1 95 
+ThermistorSamplingPeriodGen1 50 
+EnableGen2Participant 0 
+ActiveThermalTripPointGen2 63 
+PassiveThermalTripPointGen2 71 
+CriticalThermalTripPointGen2 103 
+CriticalThermalTripPointGen2S3 100 
+HotThermalTripPointGen2 95 
+ThermistorSamplingPeriodGen2 50 
+EnableGen3Participant 0 
+ActiveThermalTripPointGen3 63 
+PassiveThermalTripPointGen3 71 
+CriticalThermalTripPointGen3 103 
+CriticalThermalTripPointGen3S3 100 
+HotThermalTripPointGen3 95 
+ThermistorSamplingPeriodGen3 50 
+EnableGen4Participant 0 
+ActiveThermalTripPointGen4 63 
+PassiveThermalTripPointGen4 71 
+CriticalThermalTripPointGen4 103 
+CriticalThermalTripPointGen4S3 100 
+HotThermalTripPointGen4 95 
+ThermistorSamplingPeriodGen4 50 
+EnableGen5Participant 0 
+ActiveThermalTripPointGen5 43 
+PassiveThermalTripPointGen5 42 
+CriticalThermalTripPointGen5 0 
+CriticalThermalTripPointGen5S3 0 
+HotThermalTripPointGen5 0 
+ThermistorSamplingPeriodGen5 50 
+EnableGen6Participant 0 
+ActiveThermalTripPointGen6 0 
+PassiveThermalTripPointGen6 0 
+CriticalThermalTripPointGen6 0 
+CriticalThermalTripPointGen6S3 0 
+HotThermalTripPointGen6 0 
+ThermistorSamplingPeriodGen6 0 
+EnableGen7Participant 0 
+ActiveThermalTripPointGen7 0 
+PassiveThermalTripPointGen7 0 
+CriticalThermalTripPointGen7 0 
+CriticalThermalTripPointGen7S3 0 
+HotThermalTripPointGen7 0 
+ThermistorSamplingPeriodGen7 0 
+EnableGen8Participant 0 
+ActiveThermalTripPointGen8 0 
+PassiveThermalTripPointGen8 0 
+CriticalThermalTripPointGen8 0 
+CriticalThermalTripPointGen8S3 0 
+HotThermalTripPointGen8 0 
+ThermistorSamplingPeriodGen8 0 
+EnableActivePolicy 1 
+EnablePassivePolicy 1 
+TrtRevision 1 
+EnableCriticalPolicy 1 
+EnableCoolingModePolicy 0 
+EnableACTPolicy 0 
+EnableHDCPolicy 0 
+EnableAPPolicy 0 
+EnableVSPolicy 0 
+PpccObject 0 
+PdrtObject 0 
+ArtgObject 0 
+PmaxObject 0 
+Tmp1Object 1 
+Tmp2Object 1 
+Tmp3Object 0 
+Tmp4Object 0 
+Tmp5Object 0 
+Tmp6Object 0 
+Tmp7Object 0 
+Tmp8Object 0 
+OptionalObjects 1 
+OemDesignVariable0 0 
+OemDesignVariable1 0 
+OemDesignVariable2 0 
+OemDesignVariable3 0 
+OemDesignVariable4 0 
+OemDesignVariable5 0 
+Rtd3Support 0 
+Rtd3P0dl 0 
+Rtd3P3dl 0 
+Rtd3UsbPt1 0 
+Rtd3UsbPt2 0 
+Rtd3I2C0SensorHub 0 
+Rtd3AudioDelay 0 0 
+Rtd3TouchPadDelay 0 0 
+Rtd3TouchPanelDelay 0 0 
+Rtd3SensorHub 0 0 
+VRStaggeringDelay 0 0 
+VRRampUpDelay 0 0 
+PstateCapping 0 
+Rtd3ZPODD 0 
+Rtd3Camera 0 
+Rtd3WWAN 0 
+Rtd3SataPort0 0 
+Rtd3SataPort1 0 
+Rtd3SataPort2 0 
+Rtd3SataPort3 0 
+Rtd3SataPort4 0 
+Rtd3WaGpio 0 
+Rtd3RemapCR1 0 
+Rtd3RemapCR2 0 
+Rtd3RemapCR3 0 
+Rtd3I2C0ControllerPS0Delay 0 0 
+Rtd3I2C1ControllerPS0Delay 0 0 
+ConsolidatedPR 0 
+Rtd3PcieNvme 0 
+Rtd3I2CTouchPanel 0 
+PowerSharingManagerEnable 0 
+PsmSplcDomainType1 9 
+PsmSplcPowerLimit1 160 15 0 0 
+PsmSplcTimeWindow1 48 117 0 0 
+PsmSplcDomainType2 20 
+PsmSplcPowerLimit2 160 15 0 0 
+PsmSplcTimeWindow2 48 117 0 0 
+PsmDplcDomainType1 9 
+PsmDplcDomainPreference1 9 
+PsmDplcPowerLimitIndex1 0 0 
+PsmDplcDefaultPowerLimit1 176 4 
+PsmDplcDefaultTimeWindow1 48 117 0 0 
+PsmDplcMinimumPowerLimit1 176 4 
+PsmDplcMaximumPowerLimit1 176 4 
+PsmDplcMaximumTimeWindow1 232 3 
+PsmDplcDomainType2 20 
+PsmDplcDomainPreference2 20 
+PsmDplcPowerLimitIndex2 0 0 
+PsmDplcDefaultPowerLimit2 176 4 
+PsmDplcDefaultTimeWindow2 48 117 0 0 
+PsmDplcMinimumPowerLimit2 176 4 
+PsmDplcMaximumPowerLimit2 176 4 
+PsmDplcMaximumTimeWindow2 232 3 
+WifiEnable 0 
+WifiDomainType1 7 
+WifiPowerLimit1 64 6 
+WifiTimeWindow1 48 117 0 0 
+WifiDomainType2 16 
+WifiPowerLimit2 64 6 
+WifiTimeWindow2 48 117 0 0 
+WifiDomainType3 20 
+WifiPowerLimit3 26 4 
+WifiTimeWindow3 48 117 0 0 
+TRxDelay0 50 
+TRxCableLength0 50 
+TRxDelay1 50 
+TRxCableLength1 50 
+WrddDomainType1 7 
+WrddCountryIndentifier1 80 65 
+WrddDomainType2 16 
+WrddCountryIndentifier2 80 65 
+WrdsWiFiSarEnable 0 
+WrdsWiFiSarTxPowerLimit1 0 
+WrdsWiFiSarTxPowerLimit2 0 
+WrdsWiFiSarTxPowerLimit3 0 
+WrdsWiFiSarTxPowerLimit4 0 
+WrdsWiFiSarTxPowerLimit5 0 
+WrdsWiFiSarTxPowerLimit6 0 
+WrdsWiFiSarTxPowerLimit7 0 
+WrdsWiFiSarTxPowerLimit8 0 
+WrdsWiFiSarTxPowerLimit9 0 
+WrdsWiFiSarTxPowerLimit10 0 
+CameraType 1 
+IvcamDfuSupport 0 
+IvcamWakeSupport 0 
+IvcamPowerOnDelay 0 0 
+IvcamPowerOffDelay 0 0 
+IvcamRotation 0 
+DsPowerOnDelay 250 0 
+DsPowerOffDelay 0 0 
+DsRotation 0 
+AudioConnector 0 
+WirelessCharging 0 
+UsbFnEnable 0 
+EnableEInkDfu 0 
+FanControl 0 
+CpuFanControl 0 
+LowestFanSpeed 0 
+TbtSupport 0 
+TbtWakeupSupport 0 
+ReserveBusForDGfx 0 
+ReserveMemoryForDGfx 0 0 
+ReservePMemoryForDGfx 0 0 
+TbtPcieSupport 0 
+TbtXConnectSupport 0 
+TbtUsbOn 0 
+TbtBootOn 0 
+AicArSupport 0 
+SprSupport 0 
+TbtCacheLineSize 0 
+Gpio3ForcePwr 0 
+Gpio3ForcePwrDly 0 0 
+SecurityMode 0 
+CallSmiBeforeBoot 0 
+TbtDgpuPciBaseAddressMem 0 0 0 0 
+TbtDebugBaseAddressMem 0 0 0 0 
+TbtDeviceTreeBuffer 0 0 0 0 
+CardSelected 0 
+ReserveMemoryPerSlot 0 0 
+ReservePMemoryPerSlot 0 0 
+ReserveIoPerSlot 0 
+AssignIo 0 
+MoreIOForPorts 0 
+AssignPMem 0 
+TbtNativeOsHotPlug 0 
+TBTHotSMI 0 
+Gpio5Filter 0 
+TBTHotNotify 0 
+EnableMsiInFadt 0 
+TbtSelector 0 
+TBTSetClkReq 0 
+TbtAspm 0 
+TbtLtr 0 
+TBThostRouter 0 
+TbtHostLocationGroup 0 
+TbtHostTempLocationNB 0 
+TbtHostTempLocationSB 0 
+TbtPcieExtraBusRsvd 0 
+TbtPcieMemRsvd 0 0 
+TbtPcieIoRsvd 0 
+TbtPcieMemAddrRngMax 0 
+TbtPciePMemRsvd 0 0 
+TbtPciePMemAddrRngMax 0 
+TbtSkipPciEnumeration 0 
+TbtSkipPciOprom 0 
+TbtSkipIntLine 0 
+TbtAcpiRemovalSupport 0 
+TbtWaSwitch 0 
+TbtWaPrewakeEnable 0 
+TbtWaXhciActiveLtr 0 0 0 0 
+TbtWaXhciHighLtr 0 0 0 0 
+TbtWaXhciMediumLtr 0 0 0 0 
+TbtWaXhciLowLtr 0 0 0 0 
+IccWdtEnabled 0 
+IccLockRegisters 0 
+IccProfile 0 
+ShowProfile 0 
+NumProfiles 0 
+IccPllShutdownEnabled 1 
+CsModeFirst 0 
+CsMode 0 
+CsModeChanged 0 
+PlatformUnstable 0 
+IsOcDefaultsInitalized 0 
+SecureEraseModeRealMode 0 
+ForceSecureErase 0 
+HidEventFilterDriverEnable 1 
+Ssic7160and7260InitSetup 0 
+TestMctpBroadcastCycle 0 
+SlpS0VmSupport 1 
+UsbTypeCAicSupport 1 
+HebcValue 243 51 2 0 
+I2cSarResetDelay 8 
+WWANEnable 0 
+UsbTypecBssbMode 1 
+PepWiGigF1 1 
+AlternateModeSynchDelay 0 
+WigigRfe 1 
+WiGigRfeCh1 0 
+WiGigRfeCh2 0 
+WiGigRfeCh3 0 
+WiGigRfeCh4 0 
+AwvClassIndex 0 0 0 0 
+Rtd3RaidVolumes 0 
+ThermalSamplingPeriodWifi 0 
+WakeOnWiGigSupport 1 
+EnablePIDPolicy 0 
+SkyCamControlLogic0Wled1FlashMaxCurrent 0 
+SkyCamControlLogic0Wled1TorchMaxCurrent 0 
+SkyCamControlLogic0Wled2FlashMaxCurrent 0 
+SkyCamControlLogic0Wled2TorchMaxCurrent 0 
+SkyCamControlLogic0Wled1Type 1 
+SkyCamControlLogic0Wled2Type 0 
+SkyCamControlLogic1Wled1FlashMaxCurrent 0 
+SkyCamControlLogic1Wled1TorchMaxCurrent 0 
+SkyCamControlLogic1Wled2FlashMaxCurrent 0 
+SkyCamControlLogic1Wled2TorchMaxCurrent 0 
+SkyCamControlLogic1Wled1Type 0 
+SkyCamControlLogic1Wled2Type 0 
+SkyCamControlLogic2Wled1FlashMaxCurrent 0 
+SkyCamControlLogic2Wled1TorchMaxCurrent 0 
+SkyCamControlLogic2Wled2FlashMaxCurrent 0 
+SkyCamControlLogic2Wled2TorchMaxCurrent 0 
+SkyCamControlLogic2Wled1Type 0 
+SkyCamControlLogic2Wled2Type 0 
+SkyCamControlLogic3Wled1FlashMaxCurrent 0 
+SkyCamControlLogic3Wled1TorchMaxCurrent 0 
+SkyCamControlLogic3Wled2FlashMaxCurrent 0 
+SkyCamControlLogic3Wled2TorchMaxCurrent 0 
+SkyCamControlLogic3Wled1Type 0 
+SkyCamControlLogic3Wled2Type 0 
+SkyCamLink0DriverDataPrivacyLed 0 
+SkyCamLink0DriverDataPmicPosition 0 
+SkyCamLink0DriverDataVoltageRail 0 
+SkyCamLink1DriverDataPrivacyLed 0 
+SkyCamLink1DriverDataPmicPosition 0 
+SkyCamLink1DriverDataVoltageRail 0 
+SkyCamLink2DriverDataPrivacyLed 0 
+SkyCamLink2DriverDataPmicPosition 0 
+SkyCamLink2DriverDataVoltageRail 0 
+SkyCamLink3DriverDataPrivacyLed 0 
+SkyCamLink3DriverDataPmicPosition 0 
+SkyCamLink3DriverDataVoltageRail 0 
+EndOfSetupData 0 
+StartOfCpu 0 
+XDBit 1 
+LimitCpuid 0 
+CpuSetBootRatio 0 
+CpuRatio 20 
+CpuDefaultRatio 0 
+CpuRatioOverride 0 
+Peci 1 
+HyperThreading 1 
+ActiveCoreCount 0 
+BistOnReset 0 
+JtagC10PowerGateDisable 0 
+EnableGv 1 
+RaceToHalt 1 
+EnableHwp 0 
+BootFrequency 1 
+EnableCx 1 
+EnableC1e 1 
+TurboMode 1 
+PowerLimit1 0 0 0 0 
+LongDurationPwrLimitOverride 0 
+PowerLimit1Time 0 
+PowerLimit2 1 
+PowerLimit2Power 0 0 0 0 
+PowerLimit3Override 0 
+PowerLimit3 0 0 0 0 
+PowerLimit3Time 0 
+PowerLimit3DutyCycle 0 
+PowerLimit3Lock 1 
+PowerLimit4Override 0 
+PowerLimit4 0 0 0 0 
+PowerLimit4Lock 0 
+TurboPowerLimitLock 0 
+PlatformPowerLimit1Enable 0 
+PlatformPowerLimit1Power 0 0 0 0 
+PlatformPowerLimit1Time 0 
+PlatformPowerLimit2Enable 0 
+PlatformPowerLimit2Power 0 0 0 0 
+EnergyEfficientPState 1 
+CStatePreWake 1 
+CStateAutoDemotion 3 
+CStateUnDemotion 3 
+PkgCStateDemotion 2 
+PkgCStateUnDemotion 2 
+EnableThermalMonitor 1 
+PmgCstCfgCtrlLock 1 
+ConfigTdpLevel 0 
+ConfigTdpLock 0 
+ConfigTdpBios 0 
+TimedMwait 0 
+PmgCstCfgCtrIoMwaitRedirection 0 
+InterruptRedirectMode 4 
+HdcControl 1 
+PkgCStateLimit 8 
+CstateLatencyControl0TimeUnit 2 
+CstateLatencyControl1TimeUnit 2 
+CstateLatencyControl2TimeUnit 2 
+CstateLatencyControl3TimeUnit 2 
+CstateLatencyControl4TimeUnit 2 
+CstateLatencyControl5TimeUnit 2 
+CstateLatencyControl0Irtl 78 0 
+CstateLatencyControl1Irtl 118 0 
+CstateLatencyControl2Irtl 148 0 
+CstateLatencyControl3Irtl 250 0 
+CstateLatencyControl4Irtl 76 1 
+CstateLatencyControl5Irtl 242 3 
+Custom1PowerLimit1Power 0 0 0 0 
+Custom1PowerLimit2Power 0 0 0 0 
+Custom1PowerLimit1Time 0 
+Custom1TurboActivationRatio 0 
+Custom2PowerLimit1Power 0 0 0 0 
+Custom2PowerLimit2Power 0 0 0 0 
+Custom2PowerLimit1Time 0 
+Custom2TurboActivationRatio 0 
+Custom3PowerLimit1Power 0 0 0 0 
+Custom3PowerLimit2Power 0 0 0 0 
+Custom3PowerLimit1Time 0 
+Custom3TurboActivationRatio 0 
+TStatesEnable 0 
+EnableProcHot 1 
+DisableProcHotOut 1 
+DisableVrThermalAlert 0 
+ProcHotLock 0 
+ProcHotResponse 0 
+TCCActivationOffset 3 
+NumOfCustomPStates 0 
+StateRatio ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+VT 1 
+AesEnable 1 
+MachineCheck 1 
+MonitorMwait 1 
+DprSize 4 0 
+HwPrefetcher 1 
+AclPrefetch 1 
+Txt 0 
+LtDprProgramming 0 
+ResetAux 0 
+AcheckRequest 0 
+MsegOpt 0 
+MsegSize 0 
+EcTurboControlMode 0 
+AcBrickCapacity 1 
+EcPollingPeriod 1 
+EcGuardBandValue 0 
+EcAlgorithmSel 1 
+IsTurboRatioDefaultsInitalized 0 
+FlexRatioOverrideDefault 0 
+RatioLimit1Default 0 
+RatioLimit2Default 0 
+RatioLimit3Default 0 
+RatioLimit4Default 0 
+RatioLimit1 0 
+RatioLimit2 0 
+RatioLimit3 0 
+RatioLimit4 0 
+OverclockingLockDefault 0 
+OverclockingLock 0 
+DebugInterfaceEnable 0 
+DebugInterfaceLockEnable 1 
+DebugDciEnable 0 
+FlashWearOutProtection 0 
+EnableC6Dram 0 
+EnableSgx 2 
+EpochUpdate 0 
+ShowEpoch 0 
+PrmrrSize 0 0 0 0 
+SgxEpoch0 39 143 164 95 141 253 61 85 
+SgxEpoch1 193 253 75 190 185 103 103 215 
+ApIdleManner 1 
+ApHandoffManner 1 
+ProcTraceOutputScheme 0 
+ProcTraceMemSize 255 
+ProcTraceEnable 0 
+SkipStopPbet 0 
+EpocFclkFreq 0 
+PsysSlope 0 
+PsysOffset 0 
+PsysPmax 0 0 
+VrConfigEnable ARRAY [1] [1] [1] [1] 
+AcLoadline ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+DcLoadline ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+Psi1Threshold ARRAY [80, 0] [80, 0] [80, 0] [80, 0] 
+Psi2Threshold ARRAY [20, 0] [20, 0] [20, 0] [20, 0] 
+Psi3Threshold ARRAY [4, 0] [4, 0] [4, 0] [4, 0] 
+Psi3Enable ARRAY [1] [1] [1] [1] 
+Psi4Enable ARRAY [1] [1] [1] [1] 
+ImonSlope ARRAY [0] [0] [0] [0] 
+ImonOffset ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+ImonOffsetPrefix ARRAY [0] [0] [0] [0] 
+IccMax ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+VrVoltageLimit ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+TdcPowerLimit ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+TdcEnable ARRAY [0] [0] [0] [0] 
+TdcTimeWindow ARRAY [1] [1] [1] [1] 
+TdcLock ARRAY [0] [0] [0] [0] 
+TccOffsetTimeWindow 0 0 0 0 
+TccOffsetClamp 0 
+TccOffsetLock 0 
+FlexOverrideEnable 0 
+MaxEfficiencyRatio 0 
+MaxNonTurboRatio 0 
+FlexRatioOverride 0 
+EnableGvDefault 0 
+TurboModeDefault 0 
+PowerLimit1TimeDefault 0 
+PowerLimit1Default 0 0 0 0 
+PowerLimit2Default 0 0 0 0 
+XeTdcLimit 0 0 
+XeTdcLimitDefault 0 0 
+XeTdpLimitDefault 0 0 
+XeTdcLimitHangBootValue 0 0 
+XeTdpLimitHangBootValue 0 0 
+XeRatioLimit1HangBootValue 0 
+XeRatioLimit2HangBootValue 0 
+XeRatioLimit3HangBootValue 0 
+XeRatioLimit4HangBootValue 0 
+BusSpeedEnable 0 
+ProcessorBusSpeedOverride 0 
+ProcessorBusSpeedOverrideDefault 0 
+ImonScaling 0 
+PciePll 0 
+EnergyEfficientTurbo 1 
+PrevBootMcFrequency 0 0 
+WDTSupportforNextOSBoot 0 
+TimeforNextOSBoot 0 0 
+Ck505Present 0 
+EnableDigitalThermalSensor 0 
+OverclockingSupport 0 
+XtuInterfaceEnable 0 
+CoreMaxOcRatio 0 
+CoreVoltageMode 0 
+CoreVoltageOverride 0 0 
+CoreVoltageOffset 0 0 
+CoreVoltageOffsetPrefix 0 
+CoreExtraTurboVoltage 0 0 
+Avx2RatioOffset 0 
+RingMaxOcRatio 0 
+VboostEnable 0 
+CoreMaxOcRatioDefault 0 
+CoreVoltageModeDefault 0 
+CoreVoltageOverrideDefault 0 0 
+CoreVoltageOffsetDefault 0 0 
+CoreVoltageOffsetPrefixDefault 0 
+CoreExtraTurboVoltageDefault 0 0 
+Avx2RatioOffsetDefault 0 
+RingMaxOcRatioDefault 0 
+EnableRsr 0 
+VoltageOptimization 2 
+RingMinOcRatio 0 
+RingMinOcRatioDefault 0 
+AutoThermalReporting 0 
+CorePllVoltageOffset 0 0 
+AcousticNoiseMitigation 0 
+FastPkgCRampDisableIa 0 
+FastPkgCRampDisableGt 0 
+FastPkgCRampDisableSa 0 
+SlowSlewRateForIa 0 
+SlowSlewRateForGt 0 
+SlowSlewRateForSa 0 
+BclkAdaptiveVoltageEnable 1 
+VrMbxCmd 0 
+EndOfCpu 0 
+StartOfMe 0 
+TpmDeviceSelection 1 
+MeFirmwareInfo 0 
+MeImageType 0 
+MeFwDowngrade 0 
+NfcDevice 0 
+NfcAvailable 0 
+CommsHubEnable 0 
+HeciTimeouts 1 
+DidInitStat 0 
+DisableCpuReplacedPolling 0 
+SendDidMsg 1 
+DisableHeciRetry 0 
+DisableMessageCheck 0 
+SkipMbpHob 0 
+HeciCommunication2 0 
+KtDeviceEnable 1 
+IderDeviceEnable 1 
+DisableD0I3SettingForHeci 0 
+ChangeEps 0 
+UnconfigOnRtcAvailable 0 
+CoreBiosDoneEnabled 1 
+EndOfPostMessage 2 
+Heci3Enabled 0 
+MeJhiSupport 0 
+Amt 1 
+AmtbxHotKeyPressed 0 
+AmtbxSelectionScreen 0 
+HideUnConfigureMeConfirm 0 
+MebxDebugMsg 0 
+UnConfigureMe 0 
+AmtCiraRequest 0 
+AmtCiraTimeout 0 
+UsbProvision 0 
+FwProgress 1 
+Asf 1 
+WatchDog 1 
+WatchDogTimerOs 30 0 
+WatchDogTimerBios 30 0 
+MebxNonUiTextMode 0 
+MebxUiTextMode 0 
+MebxGraphicsMode 0 
+OsPtpAware 1 
+MeUnconfigOnRtcClear 1 
+EndOfMe 0 
+StartOfSa 0 
+PwdwnIdleCounter 0 
+WeaklockEn 1 
+BdatEnable 0 
+EdramRatio 0 
+XmpProfileEnable 0 
+MemoryVoltage 0 0 
+MemoryVoltageDefault 0 0 
+DllBwEn0 0 
+DllBwEn1 1 
+DllBwEn2 2 
+DllBwEn3 2 
+DdrRefClkDefault 0 
+DdrRefClk 1 
+DdrRatioDefault 0 
+DdrRatio 0 
+DdrOddRatioMode 0 
+tCL 0 
+tCWL 0 
+tFAW 0 0 
+tRAS 0 0 
+tRCDtRP 0 
+tREFI 0 0 
+tRFC 0 0 
+tRRD 0 
+tRTP 0 
+tWR 0 
+tWTR 0 
+NModeSupport 0 
+tCLDefault 0 
+tCWLDefault 0 
+tFAWDefault 0 0 
+tRASDefault 0 0 
+tRCDtRPDefault 0 
+tREFIDefault 0 0 
+tRFCDefault 0 0 
+tRRDDefault 0 
+tRTPDefault 0 
+tWRDefault 0 
+tWTRDefault 0 
+NModeDefault 0 
+GtDid 0 0 
+IgdBootType 0 
+DisplayPipeB 0 
+LcdPanelType 0 
+LcdPanelScaling 0 
+EnableRenderStandby 1 
+IgdLcdBlc 2 
+IgdLcdIBia 0 
+IgdLcdSSCC 0 
+AlsEnable 0 
+IgdHdcpEnable 0 
+HdcpAlgorithm 0 
+LowPowerMode 1 
+ActiveLFP 3 
+LfpColorDepth 0 
+GTTSize 3 
+ApertureSize 1 
+PanelPowerEnable 1 
+PmSupport 1 
+PeiGraphicsPeimInit 0 
+PavpEnable 1 
+VbiosBrightness 255 
+CdynmaxClampEnable 1 
+GtFreqMax 255 
+BclkOverride 0 
+BclkFrequency 0 0 0 0 
+PegAspm ARRAY [4] [4] [4] 
+PegAspmL0s ARRAY [3] [3] [3] 
+Peg0Enable 2 
+Peg1Enable 2 
+Peg2Enable 2 
+Peg0MaxLinkSpeed 0 
+Peg1MaxLinkSpeed 0 
+Peg2MaxLinkSpeed 0 
+Peg0MaxLinkWidth 0 
+Peg1MaxLinkWidth 0 
+Peg2MaxLinkWidth 0 
+Peg0PowerDownUnusedLanes 1 
+Peg1PowerDownUnusedLanes 1 
+Peg2PowerDownUnusedLanes 1 
+PegRxCemTestingMode 0 
+PegRxCemLoopbackLane 0 
+PegRxCemNonProtocolAwareness 0 
+PegDisableSpreadSpectrumClocking 0 
+Peg0Gen3EqPh3Method 0 
+Peg1Gen3EqPh3Method 0 
+Peg2Gen3EqPh3Method 0 
+Peg0Gen3EqPh2Enable 2 
+Peg1Gen3EqPh2Enable 2 
+Peg2Gen3EqPh2Enable 2 
+PegDeEmphasis ARRAY [1] [1] [1] 
+PegMaxPayload ARRAY [255] [255] [255] 
+Peg0LtrEnable 1 
+Peg1LtrEnable 1 
+Peg2LtrEnable 1 
+Peg0ObffEnable 1 
+Peg1ObffEnable 1 
+Peg2ObffEnable 1 
+PegGen3ProgramStaticEq 1 
+PegGen3RootPortPreset ARRAY [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] 
+PegGen3EndPointPreset ARRAY [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] 
+PegGen3EndPointHint ARRAY [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] 
+PegGen3RxCtlePeaking ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+PegGen3RxCtleOverride 0 
+Gen3SwEqJitterDwellTime 184 11 
+Gen3SwEqAlwaysAttempt 0 
+InitAspmAfterOprom 0 
+PegGen3AllowGpioReset 1 
+Gen3SwEqJitterErrorTarget 2 0 
+PegGenerateBdatMarginTable 0 
+Gen3SwEqEnableVocTest 2 
+Gen3SwEqVocDwellTime 16 39 
+Gen3SwEqVocErrorTarget 2 0 
+Gen3SwEqNumberOfPresets 2 
+PegRootPortHPE ARRAY [0] [0] [0] 
+PegSlotPowerLimitScale ARRAY [0] [0] [0] 
+PegSlotPowerLimitValue ARRAY [75] [75] [75] 
+PegPhysicalSlotNumber ARRAY [1, 0] [2, 0] [3, 0] 
+PegExtraBusRsvd ARRAY [0] [0] [0] 
+PegMemRsvd ARRAY [10, 0] [10, 0] [10, 0] 
+PegIoRsvd ARRAY [4] [4] [4] 
+EpgEnable 0 
+Idd3n 26 0 
+Idd3p 11 0 
+IgdDvmt50PreAlloc 1 
+IgdDvmt50TotalAlloc 2 
+SaDevice7 0 
+SaDevice4 0 
+EnableVtd 1 
+EnableAbove4GBMmio 0 
+GmmEnable 0 
+SaImguEnable 1 
+EdramTestMode 2 
+IedMemEnable 0 
+X2ApicOptOut 0 
+DmiVc1 0 
+DmiVcm 1 
+DmiMaxLinkSpeed 0 
+DmiIot 0 
+DmiDeEmphasis 1 
+DmiGen3EqPh2Enable 2 
+DmiGen3EqPh3Method 0 
+DmiGen3ProgramStaticEq 1 
+DmiGen3RootPortPreset ARRAY [4] [4] [4] [4] 
+DmiGen3EndPointPreset ARRAY [7] [7] [7] [7] 
+DmiGen3EndPointHint ARRAY [2] [2] [2] [2] 
+DmiGen3RxCtlePeaking ARRAY [3] [3] 
+DmiAspm 2 
+DmiExtSync 0 
+AutoNsg 1 
+NumStopGrant 1 
+PrimaryDisplay 3 
+PcieCardSelect 2 
+DelayAfterPwrEn 44 1 
+DelayAfterHoldReset 100 0 
+InternalGraphics 2 
+GfxTurboIMON 31 
+HobBufferSize 0 
+EccSupport 1 
+MaxTolud 0 
+DdrFreqLimit 0 0 
+SpdProfileSelected 0 
+MrcTimeMeasure 0 
+MrcFastBoot 1 
+ChHashEnable 1 
+ChHashMask 0 0 
+ChHashInterleaveBit 2 
+Vc1ReadMeter 1 
+Vc1ReadMeterTimeWindow 32 3 0 0 
+Vc1ReadMeterThreshold 24 1 
+StrongWkLeaker 7 
+ForceSingleRank 0 
+LpddrMemWriteLatencySet 1 
+EvLoader 0 
+EvLoaderDelay 1 
+RetrainOnFastFail 1 
+CmdTriStateDis 0 
+McLock 1 
+GdxcEnable 0 
+ProbelessTrace 0 
+GdxcIotSize 4 
+GdxcMotSize 12 
+MemoryTrace 0 
+SaGv 3 
+FreqSaGvLow 0 0 
+ECT 0 
+SOT 1 
+ERDMPRTC2D 1 
+RDMPRT 1 
+RCVET 1 
+JWRL 1 
+EWRTC2D 1 
+ERDTC2D 1 
+EWRDSEQ 1 
+WRTC1D 1 
+WRVC1D 1 
+RDTC1D 1 
+DIMMODTT 1 
+DIMMRONT 1 
+WRDSEQT 0 
+WRSRT 1 
+RDODTT 1 
+RDEQT 1 
+RDAPT 1 
+WRTC2D 1 
+RDTC2D 1 
+CMDVC 1 
+WRVC2D 1 
+RDVC2D 1 
+LCT 1 
+RTL 1 
+TAT 1 
+RMT 0 
+MEMTST 0 
+ALIASCHK 1 
+RCVENC1D 1 
+RMC 1 
+WRDSUDT 0 
+CMDSR 1 
+CMDDSEQ 1 
+CMDNORM 1 
+EnableExtts 0 
+EnableCltm 0 
+EnableOltm 0 
+EnablePwrDn 1 
+EnablePwrDnLpddr 1 
+Refresh2X 0 
+DdrThermalSensor 1 
+LockPTMregs 1 
+UserPowerWeightsEn 0 
+EnergyScaleFact 4 
+RaplPwrFlCh1 0 
+RaplPwrFlCh0 0 
+RaplLim2Lock 0 
+RaplLim2WindX 1 
+RaplLim2WindY 10 
+RaplLim2Ena 0 
+RaplLim2Pwr 222 0 
+RaplLim1WindX 0 
+RaplLim1WindY 0 
+RaplLim1Ena 0 
+RaplLim1Pwr 0 0 
+WarmThresholdCh0Dimm0 255 
+WarmThresholdCh0Dimm1 255 
+WarmThresholdCh1Dimm0 255 
+WarmThresholdCh1Dimm1 255 
+HotThresholdCh0Dimm0 255 
+HotThresholdCh0Dimm1 255 
+HotThresholdCh1Dimm0 255 
+HotThresholdCh1Dimm1 255 
+WarmBudgetCh0Dimm0 255 
+WarmBudgetCh0Dimm1 255 
+WarmBudgetCh1Dimm0 255 
+WarmBudgetCh1Dimm1 255 
+HotBudgetCh0Dimm0 255 
+HotBudgetCh0Dimm1 255 
+HotBudgetCh1Dimm0 255 
+HotBudgetCh1Dimm1 255 
+IdleEnergyCh0Dimm1 10 
+IdleEnergyCh0Dimm0 10 
+PdEnergyCh0Dimm1 6 
+PdEnergyCh0Dimm0 6 
+ActEnergyCh0Dimm1 172 
+ActEnergyCh0Dimm0 172 
+RdEnergyCh0Dimm1 212 
+RdEnergyCh0Dimm0 212 
+WrEnergyCh0Dimm1 221 
+WrEnergyCh0Dimm0 221 
+IdleEnergyCh1Dimm1 10 
+IdleEnergyCh1Dimm0 10 
+PdEnergyCh1Dimm1 6 
+PdEnergyCh1Dimm0 6 
+ActEnergyCh1Dimm1 172 
+ActEnergyCh1Dimm0 172 
+RdEnergyCh1Dimm1 212 
+RdEnergyCh1Dimm0 212 
+WrEnergyCh1Dimm1 221 
+WrEnergyCh1Dimm0 221 
+SrefCfgEna 1 
+SrefCfgIdleTmr 0 2 
+ThrtCkeMinDefeat 0 
+ThrtCkeMinTmr 48 
+ThrtCkeMinDefeatLpddr 1 
+ThrtCkeMinTmrLpddr 64 
+MemoryThermalManagement 0 
+PeciInjectedTemp 0 
+ExttsViaTsOnBoard 0 
+ExttsViaTsOnDimm 0 
+VirtualTempSensor 0 
+ScramblerSupport 1 
+ForceColdReset 0 
+DisableDimmChannel0 0 
+DisableDimmChannel1 0 
+RemapEnable 1 
+MrcSafeConfig 0 
+RhPrevention 1 
+RhSolution 0 
+RhActProbability 11 
+MaxRttWr 0 
+ExitOnFailure 1 
+SkipExtGfxScan 0 
+CridEnable 0 
+SlateIndicatorRT 1 
+SlateIndicatorSx 0 
+DockIndicatorRT 0 
+DockIndicatorSx 0 
+IuerButtonEnable 0 
+IuerConvertibleEnable 0 
+IuerDockEnable 0 
+UncoreVoltageOffset 0 0 
+UncoreVoltageOffsetPrefix 0 
+UncoreVoltageOffsetDefault 0 0 
+UncoreVoltageOffsetPrefixDefault 0 
+GtsMaxOcRatio 0 
+GtsVoltageMode 0 
+GtsVoltageOffset 0 0 
+GtsVoltageOffsetPrefix 0 
+GtsVoltageOverride 0 0 
+GtsExtraTurboVoltage 0 0 
+GtusMaxOcRatio 0 
+GtusVoltageMode 0 
+GtusVoltageOffset 0 0 
+GtusVoltageOffsetPrefix 0 
+GtusVoltageOverride 0 0 
+GtusExtraTurboVoltage 0 0 
+GtsMaxOcRatioDefault 0 
+GtsVoltageModeDefault 0 
+GtsVoltageOffsetDefault 0 0 
+GtsVoltageOffsetPrefixDefault 0 
+GtsVoltageOverrideDefault 0 0 
+GtsExtraTurboVoltageDefault 0 0 
+GtusMaxOcRatioDefault 0 
+GtusVoltageModeDefault 0 
+GtusVoltageOffsetDefault 0 0 
+GtusVoltageOffsetPrefixDefault 0 
+GtusVoltageOverrideDefault 0 0 
+GtusExtraTurboVoltageDefault 0 0 
+EndOfSa 0 
+StartOfPch 0 
+SataControllerSpeed 0 
+ExternalDma 0 
+RootPortDid 0 0 
+DeepSxMode 5 
+LanWakeFromDeepSx 1 
+DisableDsxAcPresentPulldown 0 
+PmcReadDisable 0 
+OsDebugPort 0 
+PchLan 1 
+PchDciEn 0 
+PchDciAutoDetect 0 
+PchWakeOnLan 1 
+SlpLanLowDc 1 
+PchLanK1Off 1 
+PchWakeOnWlan 0 
+PchWakeOnWlanDeepSx 0 
+PchLpcClockRun 1 
+PchDisableEnergyReport 0 
+EnableTcoTimer 0 
+PchCapsuleResetType 0 
+PchCrid 0 
+PchRtcLock 1 
+PchBiosLock 1 
+Hpet 1 
+StateAfterG3 1 
+IchPort80Route 0 
+EnhancePort8xhDecoding 1 
+PchSirqMode 0 
+PchPort61hSmm 1 
+PciePllSsc 255 
+WdtEnable 1 
+PchUsb20 ARRAY [0] [0] 
+PchUsbPortDisable 0 
+PchUsbHsPort ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [0] [0] 
+PchUsbSsPort ARRAY [1] [1] [0] [1] [1] [1] [1] [1] [1] [1] 
+DisableComplianceMode 1 
+UsbSsicEnable ARRAY [1] [1] 
+PchXdciSupport 0 
+PchSata 1 
+SataInterfaceMode 2 
+SataPort ARRAY [1] [1] [1] [1] [1] [1] [1] [1] 
+SataHotPlug ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+SataMechanicalSw ARRAY [1] [1] [1] [1] [1] [1] [1] [1] 
+SataSpinUp ARRAY [1] [1] [0] [0] [0] [0] [0] [0] 
+SataExternal ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+SataType ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+SataTopology ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+SataRaidR0 1 
+SataRaidR1 1 
+SataRaidR10 1 
+SataRaidR5 1 
+SataRaidIrrt 1 
+SataRaidOub 1 
+SataHddlk 1 
+SataLedl 1 
+SataRaidIooe 1 
+SataRaidSrt 1 
+SataRaidOromDelay 0 
+SataRstForceForm 0 
+SataAlternateId 0 
+SataSalp 1 
+SataTestMode 0 
+RaidDeviceId 0 
+PxDevSlp ARRAY [1] [1] [0] [0] [0] [0] [0] [0] 
+EnableDitoConfig ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+DitoVal ARRAY [113, 2] [113, 2] [113, 2] [113, 2] [113, 2] [113, 2] [113, 2] [113, 2] 
+DmVal ARRAY [15] [15] [15] [15] [15] [15] [15] [15] 
+SataLegacyOrom 0 
+PcieClockGatingDisabled 0 
+PcieRootPort8xhDecode 0 
+Pcie8xhDecodePortIndex 0 
+PcieRootPortPeerMemoryWriteEnable 0 
+PcieComplianceTestMode 0 
+PcieUsbGlitchWa 0 
+RstPcieStorageRemap ARRAY [0] [0] [0] 
+RstPcieStorageRemapPort ARRAY [0] [0] [0] 
+PcieRootPortEn ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+PcieRootPortAspm ARRAY [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] 
+PcieRootPortURE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortFEE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortNFE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortCEE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortCTD ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortPIE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortSFE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortSNE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortSCE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortPMCE ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+PcieRootPortHPE ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortAER ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+PcieRootPortSpeed ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortTHS ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieRootPortL1SubStates ARRAY [0] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] [3] 
+PcieRootPortACS ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+PcieRootPortEqPh3Method ARRAY [0] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] 
+PcieRootPortUptp ARRAY [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] [5] 
+PcieRootPortDptp ARRAY [151] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] [7] 
+PcieLaneCm ARRAY [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [6] [0] [0] [0] [0] 
+PcieLaneCp ARRAY [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [0] [0] [0] [0] 
+PcieTopology ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+RpFunctionSwap 1 
+PcieSwEqOverride 0 
+PcieSwEqCoeffCm ARRAY [6] [4] [8] [2] [10] 
+PcieSwEqCoeffCp ARRAY [2] [2] [2] [2] [2] 
+PchPcieLtrEnable ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+PchPcieLtrConfigLock ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PchPcieSnoopLatencyOverrideMode ARRAY [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] 
+PchPcieSnoopLatencyOverrideMultiplier ARRAY [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] 
+PchPcieNonSnoopLatencyOverrideMode ARRAY [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] 
+PchPcieNonSnoopLatencyOverrideMultiplier ARRAY [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] [2] 
+PchPcieSnoopLatencyOverrideValue ARRAY [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] 
+PchPcieNonSnoopLatencyOverrideValue ARRAY [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] [60, 0] 
+PchPcieForceLtrOverride ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PchPcieClkReqOverride ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PchPcieClkReqNumber ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PchDmiAspm 1 
+PcieExtraBusRsvd ARRAY [0] [0] [0] [0] [0] [0] [7] [7] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PcieMemRsvd ARRAY [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [17, 0] [17, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] 
+PcieIoRsvd ARRAY [4] [4] [4] [4] [4] [4] [16] [8] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] [4] 
+PchHdAudio 2 
+PchHdAudioDsp 0 
+PchHdAudioDspUaaCompliance 0 
+PchHdaIDisplayCodecDisconnect 0 
+PchHdAudioPme 0 
+PchHdAudioIoBufferOwnership 0 
+PchHdAudioIoBufferVoltage 0 
+PchHdaHdAudioLinkFreq 2 
+PchHdaIDisplayLinkFreq 4 
+PchHdaIDisplayLinkTmode 0 
+PchHdAudioCodecSelect 0 
+PchHdAudioI2sCodecSelect 0 
+PchHdAudioNhltEndpointDmic 2 
+PchHdAudioNhltEndpointBluetooth 0 
+PchHdAudioNhltEndpointI2s 0 
+PchHdAudioFeature ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PchHdAudioPostProcessingMod ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PchHdAudioPostProcessingModCustomGuid1 ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+PchHdAudioPostProcessingModCustomGuid2 ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+PchHdAudioPostProcessingModCustomGuid3 ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+PchIoApic24119Entries 1 
+PchCrossThrottling 1 
+PchSkyCamCio2Enable 1 
+PchScsEmmcEnabled 0 
+PchScsEmmcHs400Enabled 1 
+PchScsEmmcHs400DriverStrength 1 
+PchScsSdCardEnabled 0 
+PchScsSdCardSidebandEventsSupport 0 
+PchIshEnable 1 
+PchIshSpiGpioAssign 0 
+PchIshUart0GpioAssign 0 
+PchIshUart1GpioAssign 0 
+PchIshI2c0GpioAssign 0 
+PchIshI2c1GpioAssign 0 
+PchIshI2c2GpioAssign 0 
+PchIshGp0GpioAssign 0 
+PchIshGp1GpioAssign 0 
+PchIshGp2GpioAssign 0 
+PchIshGp3GpioAssign 0 
+PchIshGp4GpioAssign 0 
+PchIshGp5GpioAssign 0 
+PchIshGp6GpioAssign 0 
+PchIshGp7GpioAssign 0 
+PchIshPdtUnlock 0 
+PchSerialIo 0 
+PchSerialIoAcpiMode 0 
+PchSerialIoDevice ARRAY [1] [1] [1] [0] [2] [0] [0] [0] [0] [0] [0] 
+PchGpio 0 
+PchGpioIrqRoute 14 
+PchAdditionalSerialIoDevices 0 
+PchGpioDebounce 0 0 
+PchGpioTestDevices 0 
+PchI2cVoltageSelect ARRAY [0] [0] [1] [1] [1] [0] 
+PchSpiCsPolaritySelect ARRAY [1] [0] 
+PchUartHwFlowCtrl ARRAY [1] [1] [1] 
+TraceHubEnableMode 0 
+MemRegion0BufferSize 1 
+MemRegion1BufferSize 1 
+PchTtLevelSuggestSet 1 
+PchThrmT0Level 0 0 
+PchThrmT1Level 0 0 
+PchThrmT2Level 0 0 
+PchThrmTtEnable 0 
+PchThrmTtState13Enable 0 
+PchThrmTtLock 0 
+PchDmiTsSuggestSet 1 
+PchTs0Width 0 
+PchTs1Width 0 
+PchTs2Width 0 
+PchTs3Width 0 
+PchDmiTsawEn 0 
+PchSataTsSuggestSet 1 
+PchP0T1M 1 
+PchP0T2M 2 
+PchP0T3M 3 
+PchP0TDisp 0 
+PchP0Tinact 0 
+PchP0TDispFinit 0 
+PchP1T1M 1 
+PchP1T2M 2 
+PchP1T3M 3 
+PchP1TDisp 0 
+PchP1Tinact 0 
+PchP1TDispFinit 0 
+SmbusSpdWriteDisable 1 
+PchP2sbUnlock 0 
+FprrEnable 0 
+ChipsetInitMessage 1 
+BypassPhySyncReset 0 
+RstPcieRemapEnabled ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+EndOfPch 0 
+PchUcsiUcmcDevice 0 
+PcieDetectTimeoutMs ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+PchLegacyIoLowLatency 0 
+ZpOddSupport 0 
+FastBoot 1 
+FbSata 2 
+FbVga 1 
+FbUsb 2 
+FbPs2 1 
+FbRedirection 0 
+FbNetworkStack 0 
+FbTestMode 0 
+TpmEnable 1 
+TpmOperation 0 
+TpmEnaDisable 1 
+TpmActDeact 1 
+TpmOwnedUnowned 0 
+TpmSupport 1 
+TcgSupportEnabled 0 
+TcmSupportEnabled 0 
+TpmHrdW 0 
+TpmAuthenticate 0 
+SuppressTcg 0 
+TpmError 0 
+Tpm20Device 0 
+Tcg2SpecVersion 2 
+PlatformHierarchy 1 
+StorageHierarchy 1 
+EndorsementHierarchy 1 
+InterfaceSel 1 
+DeviceType 2 
+PhRandomization 1 
+Sha1Supported 0 
+Sha256Supported 0 
+Sha384Supported 0 
+Sha512Supported 0 
+SM3Supported 0 
+Sha1 1 
+Sha256 2 
+Sha384 0 
+Sha512 0 
+SM3 0 
+ForceTpmEnable 0 
+PpiSpecVersion 1 
+ShaPolicy 1 
+AcpiAuto 0 
+AcpiSleepState 2 0 
+AcpiLockLegacyRes 0 
+AcpiHibernate 1 
+S3ResumeVideoRepost 0 
+ForceToAcpi1 0 
+SataRaidRom 0 
+PcieRPDetectNonComplaint ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+PciePFMemRsvd ARRAY [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] [10, 0] 
+PcieMemRsvdalig ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+PciePFMemRsvdalig ARRAY [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] [1] 
+CrbTest 0 
+SmartSelfTest 0 
+BiosGuard 1 
+BaudRate ARRAY [7] [7] 
+DataBits ARRAY [8] [8] 
+Parity ARRAY [1] [1] 
+StopBits ARRAY [1] [1] 
+FlowControl ARRAY [0] [0] 
+ConsoleRedirectionEnable ARRAY [0] [0] 
+TerminalType ARRAY [3] [3] 
+VtUtf8 ARRAY [1] [1] 
+RecorderMode ARRAY [0] [0] 
+Resolution ARRAY [0] [0] 
+LegacyOsResolution ARRAY [0] [0] 
+PuttyFunctionKeyPad ARRAY [1] [1] 
+RedirectionAfterBiosPost ARRAY [0] [0] 
+AcpiSpcrConsoleRedirectionEnable 0 
+AcpiSpcrPort 0 
+AcpiSpcrTerminalType 2 
+AcpiSpcrBaudRate 7 
+AcpiSpcrFlowControl 0 
+AcpiSpcrSetupDummyVar 0 
+DebuggerConsoleRedirectionEnable 0 
+DebuggerTerminalType 0 
+ComPortforLegacy 0 
+PrimaryPeg 0 
+PrimaryPcie 0 
+DetectNonComplaint 0 
+PciExpressLength 0 
+GopOutputSelect 0 
+GopBrightness 255 0 0 0 
+EnableBIST 0 
+CsmSupport 1 
+ExpansionCardText 0 
+I19Trap 1 
+ZipEmulation 0 
+KeepGA20Active 0 
+BootOptionFilter 2 
+PxeOpRom 0 
+MassStorageOpRom 1 
+VideoOpRom 1 
+OldOpRom 1 
+ShowNVMeDrive ARRAY [0] [0] [0] [0] 
+DeviceCount 0 
+IsBatteryPresent ARRAY [0] [0] 
+DellShowRmtForm 0 
+DellRMT 0 
+DisplayDebugFields 0 
+DellLogoEStar 0 
+TpmRemoteActivate 0 
+TpmDeactivateState 0 
+TpmClearAux 0 
+RemoteBiosUpdate 0 
+CpuInternalTemperature 0 
+Therm0PresentStatus 0 
+Therm0CriticalHigh 0 
+Therm0CriticalLow 0 
+KeyboardClick 0 
+BlacktopArmEnable 0 
+BlacktopFlashEnable 0 
+BlacktopReaderEnable 0 
+SetupAccess 0 
+DellServiceTag ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+DellAssetTag ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+IsServiceTagPresent 0 
+IsAssetTagPresent 0 
+SERR 0 
+DellWdtFeature 0 
+DellWdtVisibility 0 
+DataWipeVisible 0 
+DellBiosIntegrityCheck 0 
+DellBiosAutoRecovery 0 
+DellModBaySupport 0 
+DellMiniSsdSupport 0 
+DellDockSupport 0 
+DellDockAttached 0 
+DellSysESataSupport 0 
+OEMMAC ARRAY [0] [0] [0] [0] [0] [0] 
+DellPowerClearButton 1 
+DellBiosClearButton 1 
+DellThermalClearButton 1 
+DELLPowerEventPresent 0 
+DELLBIOSEventPresent 0 
+DELLThermEventPresent 0 
+DELLProgressEventPresent 0 
+DellVideoVisibility 0 
+IntelMultiDisplay 0 
+DellShowDGpuInfo 0 
+DellWirelessVisibility 1 
+DellWirelessSwitchWWAN 1 
+DellWirelessSwitchWLAN 1 
+DellWirelessSwitchBT 1 
+DellWirelessSwitchWiGig 0 
+DellWirelessSwitchUWB 1 
+DellWirelessEnableWWAN 1 
+DellWirelessEnableWLAN 1 
+DellWirelessEnableBT 1 
+DellWirelessEnableUWB 1 
+DellWirelessSupportedWWAN 1 
+DellWirelessSwitchGPSOnWWAN 1 
+DellWirelessSupportedUWB 1 
+DellNonAdmin_WifiSwitch 0 
+DellPermEnableWWAN 1 
+DellPermEnableWLAN 1 
+DellPermEnableBT 1 
+DellWirelessLEDEnable 0 
+DellAmbientLightSensor 0 
+DellAlsEnabled 0 
+BrightnessOnBattery 5 
+BrightnessOnAc 10 
+DellHybridGraphicsSupported 0 
+EnableOptimus 1 
+OptimusFlags 0 
+DellShowOptimusForm 1 
+DellDbcEnable 0 
+MutlCore 0 
+BootList 1 
+DellVtdEnVisible 0 
+DellTxtVisible 0 
+DellLookupMethod 0 
+DellImageServerIP ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+DellImageServerPort ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+DellImageServerClientIP ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+DellImageServerSubnetMask ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+DellImageServerGateway ARRAY [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] [0, 0] 
+DellClientDhcp 0 
+DellImageServerVerboseMode 0 
+DellHddAcousticMode 0 
+DellHddProtection 0 
+DellNUMAMode 0 
+DellShowTurboModeForm 0 
+DellShowHtForm 0 
+DellShowNumaForm 0 
+DellShowHddProtectionForm 0 
+DellLimitCpuid 0 
+IsDellHddPasswordPresent 0 
+RapidStartPartition 0 
+IsCatoCardPresent 0 
+DellWakeOnAc 0 
+DellAcRecovery 0 
+DellAcRecoveryVisible 0 
+DellAutoOnEnable 0 
+AutoOnMeridiem 0 
+AutoOnTimeHours 0 
+AutoOnTimeMinutes 0 
+FanControlOverride 0 
+DellUsbWakeSupport 0 
+DellWakeOnLanWlan 0 
+DellBattPrimChargeMode 4 
+DellBattSliceChargeMode 4 
+DellBattPrimStartChargeLimt 50 
+DellBattPrimStopChargeLimt 90 
+DellWlanRadioControl 0 
+DellWwanRadioControl 0 
+AutoOnSunday 0 
+AutoOnMonday 0 
+AutoOnTuesday 0 
+AutoOnWednesday 0 
+AutoOnThursday 0 
+AutoOnFriday 0 
+AutoOnSaturday 0 
+WlancontrolVisibility 0 
+DellShowWirelessRadio 0 
+BlockSleep 0 
+PeakShiftEnable 0 
+PeakShiftStartMonHours 0 
+PeakShiftStartMonMinutes 0 
+PeakShiftBatteryThreshold 15 
+AdvBattChargeMode 0 
+BattPageGrayoutFlag 0 
+BodMonHours 0 
+BodMonMinutes 0 
+DellLidSwitch 1 
+DellOSSleepState 0 
+DellFanControlVisibility 0 
+DellSdCardEn 1 
+DellSdCardBootEn 0 
+DellPccard1394Visible 0 
+DellPccardVisible 0 
+DellPermSdCardEn 1 
+DellSdCardReadOnlyMode 0 
+DellSecUefiBootPaths 2 
+KillTPM 0 
+TpmState 0 
+MorState 0 
+TpmForceClear 0 
+TpmCurrentState 0 
+TpmPresent 1 
+TpmSupportApply 0 
+TpmActivateApplied 0 
+DellShowAdminPassword 0 
+DellGrayoutAdminPassword 0 
+DellGrayoutOldAdminPassword 0 
+DellShowSystemPassword 0 
+DellGrayoutSystemPassword 0 
+DellGrayoutOldSystemPassword 0 
+DellShowIntHddZeroPassword 0 
+DellGrayoutIntHddZeroPassword 0 
+DellGrayoutOldIntHddZeroPassword 0 
+DellShowIntHddOnePassword 0 
+DellGrayoutIntHddOnePassword 0 
+DellGrayoutOldIntHddOnePassword 0 
+DellShowIntHddTwoPassword 0 
+DellGrayoutIntHddTwoPassword 0 
+DellGrayoutOldIntHddTwoPassword 0 
+DellShowIntHddThreePassword 0 
+DellGrayoutIntHddThreePassword 0 
+DellGrayoutOldIntHddThreePassword 0 
+DellShowIntHddFourPassword 0 
+DellGrayoutIntHddFourPassword 0 
+DellGrayoutOldIntHddFourPassword 0 
+DellShowIntHddFivePassword 0 
+DellGrayoutIntHddFivePassword 0 
+DellGrayoutOldIntHddFivePassword 0 
+DellShowIntHddSixPassword 0 
+DellGrayoutIntHddSixPassword 0 
+DellGrayoutOldIntHddSixPassword 0 
+DellShowIntHddSevenPassword 0 
+DellGrayoutIntHddSevenPassword 0 
+DellGrayoutOldIntHddSevenPassword 0 
+DellShowModbayHddPassword 0 
+DellGrayoutModbayHddPassword 0 
+DellGrayoutOldModbayHddPassword 0 
+DellShowEsataHddPassword 0 
+DellGrayoutEsataHddPassword 0 
+DellGrayoutOldEsataHddPassword 0 
+DellShowDockHddPassword 0 
+DellGrayoutDockHddPassword 0 
+DellGrayoutOldDockHddPassword 0 
+DellShowMiniCardSsdPassword 0 
+DellGrayoutMiniCardSsdPassword 0 
+DellGrayoutOldMiniCardSsdPassword 0 
+DellShowMiniCardSsdOnePassword 0 
+DellGrayoutMiniCardSsdOnePassword 0 
+DellGrayoutOldMiniCardSsdOnePassword 0 
+DellShowMiniCardSsdTwoPassword 0 
+DellGrayoutMiniCardSsdTwoPassword 0 
+DellGrayoutOldMiniCardSsdTwoPassword 0 
+DellShowMiniCardSsdThreePassword 0 
+DellGrayoutMiniCardSsdThreePassword 0 
+DellGrayoutOldMiniCardSsdThreePassword 0 
+DellAdminSetupLockout 0 
+DellEnableStrongPasswords 0 
+DellStrongPasswordMinLengthAdmin 4 
+DellStrongPasswordMaxLengthAdmin 32 
+DellStrongPasswordMinLengthSystem 4 
+DellStrongPasswordMaxLengthSystem 32 
+DellOromKeyboardAccess 1 
+TcmEnable 0 
+TcmState 0 
+TcmForceClear 0 
+TcmCurrentState 0 
+TcmPresent 0 
+GrayTpmSettingInTse 0 
+GrayTpmSettingInSol 0 
+HideSetupItemInSol 0 
+DellPwdBypass 0 
+DellPwdChange 1 
+GpeClearOwner 0 
+DellGpeEnable 1 
+GpeGrayoutAttribute 0 
+DellComputrace 0 
+DellNonAdmin_WifiCatcher 0 
+DellChassisIntrusion 0 
+DellChassisDoor 0 
+DellChassisIntrusionWarning 0 
+DellChassisIntrusionVisible 0 
+DellChassisIntrusionCableInstalled 0 
+GpeVisibleAttribute 0 
+GpeClearBinding 0 
+GpeBindingVisibleAttribute 0 
+GpeBindingGrayoutAttribute 0 
+IsSsd 0 
+DellParallelPortMode 0 
+DellSerialPortMode 0 
+DellShowSerialPort 0 
+DellMicEn 0 
+DellMicEnVisibility 0 
+DellSpeakerEn 0 
+DellSpeakerEnVisibility 0 
+DellModbay 0 
+DellModbayVisible 0 
+DellExtUsbPortEn 1 
+DellExpressCardEn 0 
+DellExpressCardVisible 0 
+DellIntModemEn 0 
+DellIntModemVisible 0 
+DellEsataPortsEn 1 
+DellEsataPortsEnVisible 0 
+DellPCISlotEn 0 
+DellPCISlotEnVisible 0 
+DellSmartReportingEn 0 
+DellDisketteEn 0 
+DellUsbController 1 
+DellFrontUsbPortEn 0 
+DellRearDualUsbPortEn 0 
+DellRearQuadUsbPortEn 0 
+DellMiniCardSsdEn 0 
+DellPowershareEn 0 
+DellPowersharePercentage 0 
+DellKeyboardBacklight 8 
+DellKbdBacklightEnabled 1 
+DellKbdBacklightAlsEnabled 1 
+ASFSupport 0 
+DellDashDummy 0 
+DellCameraEn 1 
+DellCameraVisible 0 
+DellCamera2En 1 
+DellCamera2Visible 0 
+DellSataEnableMask0 0 
+DellSataEnableMask1 0 
+DellSataEnableMask2 0 
+DellSataEnableMask3 0 
+DellSataEnableMask4 0 
+DellSataEnableMask5 0 
+DellSataEnableMask6 0 
+DellSataEnableMask7 0 
+DellSataEnable0 1 
+DellSataEnable1 1 
+DellSataEnable2 1 
+DellSataEnable3 1 
+DellSataEnable4 1 
+DellSataEnable5 1 
+DellSataEnable6 0 
+DellSataEnable7 0 
+DellM2PCIeSsd0En 1 
+DellM2PCIeSsd1En 1 
+DellZpOdd 0 
+DellStealthEn 1 
+DellQuietLEDs 1 
+DellQuietLCD 1 
+DellQuietSpeakers 1 
+DellQuietFans 1 
+DellQuietBluetooth 1 
+DellQuietGPS 1 
+DellQuietWLAN 1 
+DellQuietWiGig 1 
+DellQuietWWAN 1 
+DellRgbKbdBcklghtWhiteEnabled 1 
+DellRgbKbdBcklghtRedEnabled 1 
+DellRgbKbdBcklghtGreenEnabled 1 
+DellRgbKbdBcklghtBlueEnabled 1 
+DellRgbKbdBcklghtCustom1Enabled 0 
+DellRgbKbdBcklghtCustom2Enabled 0 
+DellRgbKbdBcklghtActive 0 
+DellRgbKbdBcklghtCustom1Red 255 
+DellRgbKbdBcklghtCustom1Green 255 
+DellRgbKbdBcklghtCustom1Blue 0 
+DellRgbKbdBcklghtCustom2Red 255 
+DellRgbKbdBcklghtCustom2Green 255 
+DellRgbKbdBcklghtCustom2Blue 0 
+DellFreeFallSensorEn 0 
+DellFreeFallSensorVisible 0 
+DellWirelessSupportedWLAN 0 
+DellBlacktopSetupEnable 0 
+DellBlacktopSetupVisible 0 
+DellBlacktopInstantOnEnable 0 
+DellBlacktopInstantOnVisible 0 
+DellAzaliaEn 0 
+DellMaxPciBus 0 
+DellShowTrueManageForm 0 
+DellShowAsfForm 0 
+DellShowParallelPortForm 0 
+DellShowKbdBackLightForm 0 
+DellShowStealthForm 1 
+DellDbcPresent 0 
+DellDediGpsEn 1 
+DellAcKbdBacklightEn 0 
+DellNic 2 
+DellPermDellNic 1 
+DellPermUSB30UsbPortEn_Removed 0 
+DellPermExtUsbPortEn 1 
+DellPermDediGpsEn 1 
+DellPermCameraFrontEn 1 
+DellPermCameraBackEn 1 
+DellPermMicEn 1 
+DellPermEsataPortsEn 1 
+DellPermAzalia 1 
+DellPermExpressCard 1 
+DellPermSerialPort1 1 
+DellPermSata0 1 
+DellPermSata1 1 
+DellPermSata2 1 
+DellPermSata3 1 
+DellPermSata4 1 
+DellPermSata5 1 
+DellTouchscreen 1 
+DellTouchscreenVisibility 0 
+DellMediaCardVisibility 1 
+DellAdapterWarnings 1 
+DellAdapterWarningsVisibility 1 
+DellMouseTouchpad 2 
+DellKeypad 0 
+DellUsbEmulation 0 
+DellFnKeyEmulation 1 
+DellFnLock 1 
+DellFnLockMode 0 
+DellFastBoot 0 
+DellExtendBIOSPOSTTime 0 
+UncompressedFvSize ARRAY [0, 0, 0, 0] [0, 0, 0, 0] [0, 0, 0, 0] [0, 0, 0, 0] 
+DellKbdErrors 0 
+DellKbdErrorsVisibility 0 
+DellF12BootOption 0 
+DellCira 0 
+DellCiraVisibility 0 
+DellNumLockFormVisibility 0 
+DellMacAddressPassThrough 0 
+DellMebxHotkey 1 
+DellReservedSetupUsbProvision 0 
+DellMinisku 0 
+NormalBootFlag 0 
+DellHeadlessOp 0 
+CapsuleUpdateEn 1 
+SignedFwUpdateEn 1 
+ForcePxeBootEn 0 
+CsmLaunchPolicy 0 
+PegGen3RxCtleP 0 
+LegacyOpromSwitch 1 
+AttemptLegacyBoot 0 
+LegacyMode 0 
+SecureBootMode 0 
+DefaultKeyProvision 0 
+UefiPxeBootEn 0 
+DellBattRevision 0 
+PegGen3RxCtlePPerBundle ARRAY [0] [0] [0] [0] [0] [0] [0] [0] 
+TpmAcpiSupport 1 
+TpmPpiProOverride 0 
+TpmPpiDeproOverride 0 
+DellShowDevSupportForm 0 
+DellFlashUpSigOverride 0 
+DellBiosDowngradeEnable 1 
+AssistDefaultDetect 1 
+DellEnableExcaliburDebug 0 
+DellEnableRecoveryTool 0 
+DellEnableSos 1 
+DellAutoOsRecoveryTries 2 
+DellRecoveryFromHddEnable 1 
+PrmrrSizeIndex 2 
+SgxEpochStr ARRAY [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] [0] 
+DellSgxVisibility 1 
+DellReservedSetupHyperThreading 0 
+DellReservedSetupDeepSxMode 0 
+DellReservedSetupIrmtSupport 0 
+DellBattSliceStopChargeLimt 90 
+DellBattSliceStartChargeLimt 50 
+DellSecdBattRevision 0 
+DellReservedSetupEnableGv 0 
+DellReservedSetupEnableCx 0 
+DellReservedSetupLimitCpuid 0 
+DellReservedSetupEnableTurboMode 0 
+DellReservedSetupCriticalThermalTripPoint 0 
+DellReservedSetupPassiveThermalTripPoint 0 
+DellReservedSetupPassiveTc1 0 
+DellReservedSetupPassiveTc2 0 
+DellReservedSetupPassiveTspValue 0 
+DellReservedSetupActiveThermalTMEM 0 
+DellReservedSetupPassiveThermalTMEM 0 
+DellReservedSetupLan 0 
+DellReservedSetupAudioEnable 0 
+DellReservedSetupSataInterfaceMode 0 
+DellReservedSetupTbtBootOn 0 
+DellReservedSetupSecurityMode 0 
+DellReservedSetupTbtSupport 0 
+DisableOSD 0 
+DisableOSDVisibility 0 
+DellReservedSetupEnableVt 0 
+DellReservedSetupEnableVtd 0 
+DellReservedSetupEnableXdbit 0 
+DellAUXMACVisibility 0 
+DellReservedSetupPchUsbHsPort ARRAY [0] 
+DellAcKbdBacklight 10 
+DellBattKbdBacklight 10 
+PttPresent 0 
+UnusedSetupData_Byte_0 0 
+UnusedSetupData_Byte_1 0 
+UnusedSetupData_Byte_2 0 
+UnusedSetupData_Byte_3 0 
+UnusedSetupData_Byte_4 0 
+UnusedSetupData_Byte_5 0 
+UnusedSetupData_Byte_6 0 
+UnusedSetupData_Byte_7 0 
+UnusedSetupData_Byte_8 0 
+UnusedSetupData_Byte_9 0 
+UnusedSetupData_Byte_10 0 
+UnusedSetupData_Byte_11 0 
+UnusedSetupData_Byte_12 0 
+UnusedSetupData_Byte_13 0 
+UnusedSetupData_Byte_14 0 
+UnusedSetupData_Byte_15 0 
+UnusedSetupData_Byte_16 0 
+UnusedSetupData_Byte_17 0 
+UnusedSetupData_Byte_18 0 
+UnusedSetupData_Byte_19 0 
+UnusedSetupData_Byte_20 0 
+UnusedSetupData_Byte_21 0 
+UnusedSetupData_Byte_22 0 
+UnusedSetupData_Byte_23 0 
+UnusedSetupData_Byte_24 0 
+UnusedSetupData_Byte_25 0 
+UnusedSetupData_Byte_26 0 
+UnusedSetupData_Byte_27 0 
+UnusedSetupData_Byte_28 0 
+UnusedSetupData_Byte_29 0 
+UnusedSetupData_Byte_30 0 
+UnusedSetupData_Byte_31 0 
+UnusedSetupData_Byte_32 0 
+UnusedSetupData_Byte_33 0 
+UnusedSetupData_Byte_34 0 
+UnusedSetupData_Byte_35 0 
+UnusedSetupData_Byte_36 0 
+UnusedSetupData_Byte_37 0 
+UnusedSetupData_Byte_38 0 
+UnusedSetupData_Byte_39 0 
+UnusedSetupData_Byte_40 0 
+UnusedSetupData_Byte_41 0 
+UnusedSetupData_Byte_42 0 
+UnusedSetupData_Byte_43 0 
+UnusedSetupData_Byte_44 0 
+UnusedSetupData_Byte_45 0 
+UnusedSetupData_Byte_46 0 
+UnusedSetupData_Byte_47 0 
+UnusedSetupData_Byte_48 0 
+UnusedSetupData_Byte_49 0 
+UnusedSetupData_Byte_50 0 
+UnusedSetupData_Byte_51 0 
+UnusedSetupData_Byte_52 0 
+UnusedSetupData_Byte_53 0 
+UnusedSetupData_Byte_54 0 
+UnusedSetupData_Byte_55 0 
+UnusedSetupData_Byte_56 0 
+UnusedSetupData_Byte_57 0 
+UnusedSetupData_Byte_58 0 
+UnusedSetupData_Byte_59 0 
+UnusedSetupData_Byte_60 0 
+UnusedSetupData_Byte_61 0 
+UnusedSetupData_Byte_62 0 
+UnusedSetupData_Byte_63 0 
+UnusedSetupData_Byte_64 0 
+UnusedSetupData_Byte_65 0 
+UnusedSetupData_Byte_66 0 
+UnusedSetupData_Byte_67 0 
+UnusedSetupData_Byte_68 0 
+UnusedSetupData_Byte_69 0 
+UnusedSetupData_Byte_70 0 
+UnusedSetupData_Byte_71 0 
+UnusedSetupData_Byte_72 0 
+UnusedSetupData_Byte_73 0 
+UnusedSetupData_Byte_74 0 
+UnusedSetupData_Byte_75 0 
+UnusedSetupData_Byte_76 0 
+UnusedSetupData_Byte_77 0 
+UnusedSetupData_Byte_78 0 
+UnusedSetupData_Byte_79 0 
+UnusedSetupData_Byte_80 0 
+UnusedSetupData_Byte_81 0 
+UnusedSetupData_Byte_82 0 
+UnusedSetupData_Byte_83 0 
+UnusedSetupData_Byte_84 0 
+UnusedSetupData_Byte_85 0 
+UnusedSetupData_Byte_86 0 
+UnusedSetupData_Byte_87 0 
+UnusedSetupData_Byte_88 0 
+UnusedSetupData_Byte_89 0 
+UnusedSetupData_Byte_90 0 
+UnusedSetupData_Byte_91 0 
+UnusedSetupData_Byte_92 0 
+UnusedSetupData_Byte_93 0 
+UnusedSetupData_Byte_94 0 
+UnusedSetupData_Byte_95 0 
+UnusedSetupData_Byte_96 0 
+UnusedSetupData_Byte_97 0 
+UnusedSetupData_Byte_98 0 
+UnusedSetupData_Byte_99 0 
+UnusedSetupData_Byte_100 0 
+UnusedSetupData_Byte_101 0 
+UnusedSetupData_Byte_102 0 
+UnusedSetupData_Byte_103 0 
+UnusedSetupData_Byte_104 0 
+UnusedSetupData_Byte_105 0 
+UnusedSetupData_Byte_106 0 
+UnusedSetupData_Byte_107 0 
+UnusedSetupData_Byte_108 0 
+UnusedSetupData_Byte_109 0 
+UnusedSetupData_Byte_110 0 
+UnusedSetupData_Byte_111 0 
+UnusedSetupData_Byte_112 0 
+UnusedSetupData_Byte_113 0 
+UnusedSetupData_Byte_114 0 
+UnusedSetupData_Byte_115 0 
+UnusedSetupData_Byte_116 0 
+UnusedSetupData_Byte_117 0 
+UnusedSetupData_Byte_118 0 
+UnusedSetupData_Byte_119 0 
+UnusedSetupData_Byte_120 0 
+UnusedSetupData_Byte_121 0 
+UnusedSetupData_Byte_122 0 
+UnusedSetupData_Byte_123 0 
+UnusedSetupData_Byte_124 0 
+UnusedSetupData_Byte_125 0 
+UnusedSetupData_Byte_126 0 
+UnusedSetupData_Byte_127 0 
+UnusedSetupData_Byte_128 0 
+UnusedSetupData_Byte_129 0 
+UnusedSetupData_Byte_130 0 
+UnusedSetupData_Byte_131 0 
+UnusedSetupData_Byte_132 0 
+UnusedSetupData_Byte_133 0 
+UnusedSetupData_Byte_134 0 
+UnusedSetupData_Byte_135 0 
+UnusedSetupData_Byte_136 0 
+UnusedSetupData_Byte_137 0 
+UnusedSetupData_Byte_138 0 
+UnusedSetupData_Byte_139 0 
+UnusedSetupData_Byte_140 0 
+UnusedSetupData_Byte_141 0 
+UnusedSetupData_Byte_142 0 
+UnusedSetupData_Byte_143 0 
+UnusedSetupData_Byte_144 0 
+UnusedSetupData_Byte_145 0 
+UnusedSetupData_Byte_146 0 
+UnusedSetupData_Byte_147 0 
+UnusedSetupData_Byte_148 0 
+UnusedSetupData_Byte_149 0 
+UnusedSetupData_Byte_150 0 
+UnusedSetupData_Byte_151 0 
+UnusedSetupData_Byte_152 0 
+UnusedSetupData_Byte_153 0 
+UnusedSetupData_Byte_154 0 
+UnusedSetupData_Byte_155 0 
+UnusedSetupData_Byte_156 0 
+UnusedSetupData_Byte_157 0 
+UnusedSetupData_Byte_158 0 
+UnusedSetupData_Byte_159 0 
+UnusedSetupData_Byte_160 0 
+UnusedSetupData_Byte_161 0 
+UnusedSetupData_Byte_162 0 
+UnusedSetupData_Byte_163 0 
+UnusedSetupData_Byte_164 0 
+UnusedSetupData_Byte_165 0 
+UnusedSetupData_Byte_166 0 
+UnusedSetupData_Byte_167 0 
+UnusedSetupData_Byte_168 0 
+UnusedSetupData_Byte_169 0 
+UnusedSetupData_Byte_170 0 
+UnusedSetupData_Byte_171 0 
+UnusedSetupData_Byte_172 0 
+UnusedSetupData_Byte_173 0 
+UnusedSetupData_Byte_174 0 
+UnusedSetupData_Byte_175 0 
+UnusedSetupData_Byte_176 0 
+UnusedSetupData_Byte_177 0 
+UnusedSetupData_Byte_178 0 
+UnusedSetupData_Byte_179 0 
+UnusedSetupData_Byte_180 0 
+UnusedSetupData_Byte_181 0 
+UnusedSetupData_Byte_182 0 
+UnusedSetupData_Byte_183 0 
+UnusedSetupData_Byte_184 0 
+UnusedSetupData_Byte_185 0 
+UnusedSetupData_Byte_186 0 
+UnusedSetupData_Byte_187 0 
+UnusedSetupData_Byte_188 0 
+UnusedSetupData_Byte_189 0 
+UnusedSetupData_Byte_190 0 
+UnusedSetupData_Byte_191 0 
+UnusedSetupData_Byte_192 0 
+UnusedSetupData_Byte_193 0 
+UnusedSetupData_Byte_194 0 
+UnusedSetupData_Byte_195 0 
+UnusedSetupData_Byte_196 0 
+UnusedSetupData_Byte_197 0 
+UnusedSetupData_Byte_198 0 
+UnusedSetupData_Byte_199 0 
+UnusedSetupData_Byte_200 0 
+UnusedSetupData_Byte_201 0 
+UnusedSetupData_Byte_202 0 
+UnusedSetupData_Byte_203 0 
+UnusedSetupData_Byte_204 0 
+UnusedSetupData_Byte_205 0 
+UnusedSetupData_Byte_206 0 
+UnusedSetupData_Byte_207 0 
+UnusedSetupData_Byte_208 0 
+UnusedSetupData_Byte_209 0 
+UnusedSetupData_Byte_210 0 
+UnusedSetupData_Byte_211 0 
+UnusedSetupData_Byte_212 0 
+UnusedSetupData_Byte_213 0 
+UnusedSetupData_Byte_214 0 
+UnusedSetupData_Byte_215 0 
+UnusedSetupData_Byte_216 0 
+UnusedSetupData_Byte_217 0 
+UnusedSetupData_Byte_218 0 
+UnusedSetupData_Byte_219 0 
+UnusedSetupData_Byte_220 0 
+UnusedSetupData_Byte_221 0 
+UnusedSetupData_Byte_222 0 
+UnusedSetupData_Byte_223 0 
+UnusedSetupData_Byte_224 0 
+UnusedSetupData_Byte_225 0 
+UnusedSetupData_Byte_226 0 
+UnusedSetupData_Byte_227 0 
+UnusedSetupData_Byte_228 0 
+UnusedSetupData_Byte_229 0 
+UnusedSetupData_Byte_230 0 
+UnusedSetupData_Byte_231 0 
+UnusedSetupData_Byte_232 0 
+UnusedSetupData_Byte_233 0 
+UnusedSetupData_Byte_234 0 
+UnusedSetupData_Byte_235 0 
+UnusedSetupData_Byte_236 0 
+UnusedSetupData_Byte_237 0 
+UnusedSetupData_Byte_238 0 
+UnusedSetupData_Byte_239 0 
+UnusedSetupData_Byte_240 0 
+UnusedSetupData_Byte_241 0 
+UnusedSetupData_Byte_242 0 
+UnusedSetupData_Byte_243 0 
+UnusedSetupData_Byte_244 0 
+UnusedSetupData_Byte_245 0 
+UnusedSetupData_Byte_246 0 
+UnusedSetupData_Byte_247 0 
+UnusedSetupData_Byte_248 0 
+UnusedSetupData_Byte_249 0 
+UnusedSetupData_Byte_250 0 
+UnusedSetupData_Byte_251 0 
+UnusedSetupData_Byte_252 0 
+UnusedSetupData_Byte_253 0 
+UnusedSetupData_Byte_254 0 
+UnusedSetupData_Byte_255 0 
+UnusedSetupData_Byte_256 0 
+UnusedSetupData_Byte_257 0 
+UnusedSetupData_Byte_258 0 
+UnusedSetupData_Byte_259 0 
+UnusedSetupData_Byte_260 0 
+UnusedSetupData_Byte_261 0 
+UnusedSetupData_Byte_262 0 
+UnusedSetupData_Byte_263 0 
+UnusedSetupData_Byte_264 0 
+WlanMac1Visible 0 
+WlanMac2Visible 0 
+LongLifeCycleSecondaryBattery 0 
+Dell2S2PbattSupportingDock 0 
+tWr2WrDD 0 
+tWr2WrDR 0 
+tWr2WrDG 0 
+tWr2WrSG 0 
+tWr2RdDD 0 
+tWr2RdDR 0 
+tWr2RdDG 0 
+tWr2RdSG 0 
+tRd2WrDD 0 
+tRd2WrDR 0 
+tRd2WrDG 0 
+tRd2WrSG 0 
+tRd2RdDD 0 
+tRd2RdDR 0 
+tRd2RdDG 0 
+tRd2RdSG 0 
+WwanInterface 0 
+IslVrCmd 0 
+DellHideTpm12 0 
+PepCsme 0 
+Rtd3TbtOffDelay 0 0 
+VccIoOverrideVoltage 182 3 
+VccCoreOverrideEnable 0 
+VccCoreOverrideVoltage 182 3 
+VccStOverrideEnable 0 
+VccStOverrideVoltage 0 0 
+VccStOffsetPrefix 0 
+VccSaOverrideEnable 0 
+VccSaOverrideVoltage 26 4 
+VccSfrOcOverrideEnable 0 
+VccSfrOcOverrideVoltage 0 0 
+VccSfrOcOffsetPrefix 0 
+VccSfrOverrideEnable 0 
+VccSfrOverrideVoltage 0 
+VccSfrOffsetPrefix 0 
+VccIoOverrideEnable 0 
+ThreeStrikeCounterDisable 0 
+UcsiRetryEcEnable 0 
+WwanPowerOnDelay 0 0 0 0 
+WwanModemAssertResetDelay 0 0 0 0 
+WwanPrePowerOnDelay 0 0 0 0 
+IccMaxDefault ARRAY [0, 0] [0, 0] [0, 0] [0, 0] 
+RatioLimit5Default 0 
+RatioLimit6Default 0 
+RatioLimit7Default 0 
+RatioLimit8Default 0 
+RatioLimit5 0 
+RatioLimit6 0 
+RatioLimit7 0 
+RatioLimit8 0 
+RingDownBin 1 
+GtPllVoltageOffset 0 
+RingPllVoltageOffset 0 
+SaPllVoltageOffset 0 
+McPllVoltageOffset 0 
+RealtimeMemoryTiming 0 
+SataRstOptaneMemory 1 
+DellSupportAssistSupportLevel 0 0 
+OverrideBatteryChargingLimit 0 
+LongLifeCyclePrimaryBattery 0 
+MfgModePxeAttribute 0 0 
+DellReservedCommonBiosSystemId 0 0 
+TpmPpiClearOverride 0 
+DellPttSupport 0 
+WwanModemResetDelay 144 1 0 0 
+WwanPerstDelay 200 0 0 0 
+AcpiWwanPWMGDelay 0 0 0 0 
+AcpiWwanPWRGDelay 0 0 0 0 
+PepStorageControllers 1 
+PepSataPort0 0 
+PepSataPort1 0 
+PepSataPort2 0 
+PepSataPort3 0 
+PepSataPort4 0 
+PepSataPort5 0 
+PepSataNvm1 0 
+PepSataNvm2 0 
+PepSataNvm3 0 
+PepSataRaidVol0 0 
+TypeCPowerSelectionOption 0 
+DellEarlyTabletButtonLED 1 
+PeciC10Reset 0 
+PeciSxReset 0 
+DellReservedSetupSmartSelfTest 0 
+DellReservedSetupWlanCountryCode 0 
+DellReservedSetupEnableSgx 0 
+PepIsp 0 
+Win10Support 0 
+Gpio3ForcePwr1 0 
+TrOsup 0 
+DellTabletButtonIllumination 4 
+MasterPwdLockOut 0 
+MasterPwdLockOutVisible 0 
+DellFullScreenLogo 0 
+DellBattDockChargerMode 0 
