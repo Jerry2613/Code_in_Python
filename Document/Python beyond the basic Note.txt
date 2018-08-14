@@ -1,0 +1,173 @@
+sys.path ---> Python internal search module by this.
+
+if your module is on the path and it can't find it
+do this:
+sys.path.append('filepath')  
+export PYTHONPATH ='filepath'
+
+from module import vs import module 
+	import module-->modules is invoved and it keep its namespace. when you use the function
+			you need module name-->module.function
+	from module import--> it merge module's function/attribute to your current module.
+			      so you just use the function name.
+
+
+locals() is built-in function: returns a dictionary mapping
+         local variable names to their values.
+	example:
+		def foo(arg):
+			z = 1
+			print(locals())
+		>>> foo(4)
+		{'z':1, 'arg':4}
+		
+globals()
+callable(function/class) is built-in function: return True/False base on this 
+         function/class can be called or not. 
+         -->function, lambda, class, class's instance with __call__
+		 
+append vs extend 
+	append is added a cell to list's tail
+	extend is merge a list on list's tail
+  example
+	a = [1, 2]
+	b = [3, 4]
+	a.append(b) = [1,2, [3,4]]
+	a.extend(b) = [1,2,3,4]
+
+Put __init__.py under folder. then this folder become a package.
+__init__.py can put 	
+	__all__ =['modulename1', 'modulename2']  // import module if user use from xxx import *
+	__path__ = ['path1', 'path2']	// module path
+
+
+lambda will create anonymous function
+
+lambda parameter: expression
+
+  example  
+        f = lambda x: x**x
+	print(f(1))
+	g = lambda x, y: x*y
+	print(g(1,2))
+	
+Variable Argument 
+*args	 --> variable positional arguments list
+**kwargs --> variable keyword arguments list 
+
+*args must be in the front of **kwargs 
+	
+def test_kwargs(first, *args, **kwargs):
+	print ('Required argument: ', first)
+	for v in args:
+	    print ('Optional argument:', v)
+	for k, v in kwargs.items():
+		print ('optional argument %s (*kwargs): %s' % (k,v))
+	    
+table reverse
+	list(zip(*table))
+	
+global (key word)
+nonlocal (uplevel key world)
+
+@staticmethod vs @classmethod
+Both can be used by class.function.
+different classmetod need parameter 'cls'
+
+Inheritance
+	If you to use parent class function 
+	-->super()
+	
+[Strings and representations]
+str() and repr()
+	str() is for end user, few information.
+	repr() is for engineer. debugging
+format()
+'This is sample {}'.format()
+'{!s}'.format()
+'{!r}'.format()
+
+reprlib
+ascii()
+ord() converts a single character to its integer Unicode codepoint 
+chr() converts an integer unicode codepoint to a single character string
+
+[Numeric and scalar Types]
+	int() float() complex() abs() round()
+abs() gives the distance from zero
+round() performs decimal rounding for all scalar number types
+
+library module 
+decimal have class Decimal
+	example: from decimal import Decimal
+	
+fractions have class Fraction  (rational numbers)	
+	example: from fractions import Fraction
+
+datetime module
+	example: datetime.date.today()
+			 datetime.date.fromtimestamp(1000000000)
+	
+complex example
+	c= 3+5j
+	c.real , c.imag
+
+round example 
+	round(0.23456 , 3)
+	>>0.235
+	
+number base conversions
+bin() oct() hex() int(x, base)  :base 2 to 36
+
+[Iterables and Iteration]
+map(f, parameterlist1, parameterlist2, ..)  --> iterate all cell to f. and occur
+					 a list which member is returned from f.
+	example:
+		a = [1,2,3,4,5,6,7,8,9]
+		def fn(x):
+			return x*2
+	>>>	c = map (fn, a)
+	>>>	c
+		[2,4,6,8,10,12,14,16,18]
+filter(f, list)  --> f is function that return boolean value . it iterate al cell
+			         then occur a list which member is returned from f and TRUE.
+	example: 
+		def fn(x):
+			return x if x > 5 else None
+	>>> a = [1,2,3,4,5,6,7,8,9]
+	>>> b = filter(fn, a)
+	>>> b
+	[6,7,8,9]
+functools.reduce(f, iteration) : At first it will orderly get 2 cell input to f
+								 f will return one value . next return value and
+								 next cell will input to f . loop until it finish
+	example:
+		a = [1,2,3,4,5,6,7,8,9]
+		def fn(x,y):
+			return x+y
+	>>> d = reduce(fn, a)
+	>>> d
+	>>> 45
+
+iter()
+next()
+StopIteration()--> This is a exception when requested next() over the iter() create.
+	example:
+		lst = range(2)
+		it = iter(lst)
+	>>>	it
+	    <listiterator object at 0x00bb62f0>
+	>>> it.next(it)
+		0
+	>>> it.next(it)
+		1
+
+[Inheritance and subtype Polymorphism]
+isinstance() --> determines if an object is of a specified types
+	example:
+		isinstance(obj, type)
+issubclass() --> determines if one type is a subclass of another
+super()
+
+MRO --> method resolution order -> ordering that determines method name lookup
+	

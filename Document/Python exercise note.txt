@@ -1,0 +1,97 @@
+[random module] https://docs.python.org/3.3/library/random.html
+1. Class SystemRandom or os.urandom used for security purpose.
+ 
+[requests and BeautifulSoup]
+ head (get http header data)
+ get (get data)
+ post (add a new data)
+ delete (delete data)
+ put (add new/override data )
+ patch (add/extend data)
+***Passing Parameters In URLs
+ payload ={'key1': 'value', 'key2': 'value2'}
+ r= requests.get('http://httpbin.org/get', params =payload)
+ r.text
+ r.encoding
+ 
+ (for binary) -->gzip and deflate transfer-encoding are automatically decode.
+   r.content
+   example:
+		from PIL import Image
+		from io import BytesIO
+		
+		i =Image.open(BytesIo(r.content))
+ 
+ (for JSON)
+   r.json()
+   r.raise_for_status() or r.status_code  
+ 
+ (for Raw)
+   r =requests.get('https://api.github.com/events', stream=True)
+   r.raw
+
+   Pattern example:
+		with open(filename, 'wb') as fd:
+			for chunk in r.iter_content(chunk_size=128):
+				fd.write(chunk)
+
+Response Status Codes
+  r = requests.get('http://httpbin.org/get')
+  r.status_code
+  r.status_code == requests.codes.ok
+  r.raise_for_status()   ---> ok: None , fail: raise
+ 
+  r.headers
+  r.headers['Content-Type']
+  r.headers.get('content-type')
+Cookies
+  url = 'http://example.com/some/cookie/setting/url'
+  r = requests.get(url)
+  r.cookies['example_cookie_name']
+  
+  send your own cookies to the server, you can use the cookies parameter:
+  url = 'http://httpbin.org/cookies'
+  cookies = dict(cookie_are='working')
+
+  r = requests.get(url, cookies=cookies)
+  r.text  
+
+  { RequestsCookieJar }
+  jar =requests.cookies.RequestsCookieJar()
+  jar.set('tasty_cookie', 'yum', domain='httpbin.org', path='/cookies')
+  jar.set('gross_cookie', 'blech', domai='httpbin.org', path='/elsewhere')
+  url = 'http://httpbin.org/cookies'
+  r = requests.get(url, cookie=jar)
+  r.text
+
+Redirection and History
+  allow_redirect: you can use it to disable redirection handling.
+
+Timeouts
+  timeout: you can tell Requests to stop waiting for a response after a given number of seconds
+
+Errors and Exceptions
+  ConnectionError
+  HTTPError
+  Timeouts
+  TooManyRedirects  
+  
+[Advanced]
+  Session Objects
+  s =requests.Session()
+  s.get('http://httpbin.org/cookies/set/sessioncookie/123456789')
+  r = s.get('http://httpbin.org/cookies')
+  print(r.text)
+  
+
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

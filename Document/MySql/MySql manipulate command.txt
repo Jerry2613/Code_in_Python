@@ -1,0 +1,98 @@
+{mysql command}
+	desc tableName;
+	use databaseName;
+	create table tablename(id int, name varchar(20))charset utf8 engine mysiam;
+
+	[insert]
+		insert 
+		into tablename 
+		(row0, row1, row2) 
+		values (1,'lisi', 23);
+
+	[update]
+		update 
+		tablename 
+		set row1 = new_value1,
+			row2 = new_value2
+		where expression;
+
+	[delete]
+		delete 
+		from tablename 
+		where expression;
+
+	[select]
+		select 
+		row0, row2,row3
+		from tablename
+		where expression;
+
+
+{ 5 expression }
+	[where]
+		(compare)
+		<
+		<=
+		==
+		in
+		!= or <>
+		>=
+		>
+		BETWEEN .. AND ..
+
+		(logical)
+		not , !
+		or, ||
+		AND, &&
+
+		(like)
+		% 
+		_
+	[group by]
+		group by field
+
+	[having]
+
+	[order by]
+		desc
+		asc
+
+	[limit]
+
+
+{Functions}
+	max()
+	count()
+	avg()
+	min()
+	sum()
+
+    floor( get + number , no point)
+    substring(str,startpoint)
+    concate(string1, string2, string3)
+	
+{3 sub expression}
+	[where]
+	[from]
+	[exists]
+     select * from tablename where exists(select * from tablename where aa=q);	
+
+{from}	 
+	{inner join    on}
+		select xxx from table2 inner join table1 on table2.OO=table1.OO
+	{inner join    on}
+	{left join    on }
+		left base , search right data, NULL for none
+		NULL for none 
+	{right join    on}
+    [Join >= 2 tables need to use alias]
+    select m.*, t1.newfield as fieldename1, t2.newfiled as fieldname2
+    from table1 inner join table2 as t1 on m.xx=t1.xx 
+	inner join table2 as t2 on m.xx = t2.oo	
+
+{Union}
+	Each sentance must have the same column numbers.
+    Column name don't need the same. 
+	All equal rows will be merged.
+	[union all] will void to merged.
+	

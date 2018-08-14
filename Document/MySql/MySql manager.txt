@@ -1,0 +1,53 @@
+show tables;
+
+desc tablename/viewname; 
+
+show create table tablename; show create view viewname;
+
+show table status; \G
+show table status where name = tablename;
+
+drop table tablename; drop view viewname;
+
+rename table oldName to newName;
+
+truncate; \\drop table , create table
+
+[search]
+key,
+unique key,
+primary key,
+fulltext,( chinese is useless, use 3th solution sphinx)
+
+create table t15 (
+name char(10),
+email char(20),
+key name(name),
+unique key email(email)
+);
+
+create table t18 (
+name char(10),
+email char(20),
+key name(name),
+unique key email(email(10))
+);
+
+create table t19 (
+xing char(2),
+ming char(10),
+key xm(xing, ming)
+);
+
+create table t19 (
+xing char(2),
+ming char(10),
+key xm(xing, ming),
+key m(ming)
+);
+
+show index from tableName/show create tableName;
+alter table t20 drop index indexName;
+drop index indexName on tableName.
+alter table t20 add index(xing, ming);
+alter table t20 add primary key(xing);

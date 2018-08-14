@@ -1,0 +1,119 @@
+create table tablename(
+	row1 row_type row_attribution,
+	row2 row_type row_attribution
+	...
+)
+engine = read/write engine
+charset = string union	
+
+alter table tablename add row3 row_type row_attrbution;
+
+
+[number type]
+	int 
+		4 dword,
+		tinyint:1
+		smallint:2
+		mediumint:3
+		bigint:8
+		
+		{attribution}
+			unsigned, zerofill, M
+			    M is for zerofill. 
+				zerofill-->hint it's unsigned.
+	float
+	     float(M,D) unsigned zerofill 
+		 double(M,D) unsigned zerofill
+	fixed
+         decimal ???(more precision)
+[string type]
+	char
+	varchar
+	text
+	    tinytext
+		text
+		mediumtext
+		longtext
+	blob
+        tinyblob
+		blob
+		mediumblob
+		longblob
+	enum
+  	     sample
+		 create table t7(
+		 gender enum('male', 'female')
+		 );
+	set 
+		set(value1,value2, value3....)
+[date/time type]
+	Year 95/1995 
+		[1901-2155]
+	Date 1998-12-31 
+		[1000/01/01 ~~9999/12/31]
+	Time 13:56:23
+		[-838:59:59 ->838:59:59]
+	datetime 1998-12-31 13:56:23
+		
+[not null default xxx ]
+
+[primary key/auto_increment]
+	create table t11(
+	id int primary key,
+	name char(2)	
+	);
+	
+	or 
+    create table t11(
+	id int,
+	name char(2),
+    primary key(id)	
+	);
+
+   create table t11(
+	id int auo_increment,     
+	name char(2),
+	primary key(id)
+	);	
+	
+# auo_increment juts have one row in table, and must add (index/key)
+
+[Row add/delete and update]
+rename tablename1 to tablename2;
+
+alter table tablename
+add height tinyint unsigned not null default 0;
+
+alter table tablename drop column height;
+
+alter table tablename
+add height tinyint unsigned after fixfield not null default 0;
+
+alter table tablename change height shengao smallint;
+alter table tablename modify height smallint;
+
+desc tablename;
+
+[View] 
+virtual table ->sql result
+1. access right control
+2. simple original table.
+
+create veiw vgoods as select xx, oo, jj as sheng from tablename; 
+
+create algorithm=merge view vgoods as select xx, oo, jj as sheng from tablename;
+create algorithm=temptable view vgoods as select xx, oo, jj as sheng from tablename;
+
+[engine]
+Myisam/InnoDB/BDB/Memory/Archive
+
+[string]
+utf8/
+
+character_set_client
+character_set_connection
+character_set_result
+
+meta charset ="utf8"
+create table()charset utf8;
+set names utf8;
