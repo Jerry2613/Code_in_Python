@@ -1,4 +1,0 @@
-c:\BIOS\STL-010200\DellPkg\Include\WlanSmm.h
-c:\BIOS\STL-010200\DellPkg\Include\WwanSmm.h
-c:\BIOS\STL-010200\DPFPkg\DellClientLibPkgs\DellPublicProductionPkg\Include\AllPossibleSMBiosDaTokens.h
-c:\BIOS\STL-010200\DPFPkg\DellClientLibPkgs\DellPublicProductionPkg\Include\Guid\MessageCode.h

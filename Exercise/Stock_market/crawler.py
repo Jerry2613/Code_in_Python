@@ -10,25 +10,31 @@ import matplotlib.pyplot as plt
 class StockMarket(object):
     
     def __init__(self):
-        self.fields = ('證券代號', '證券名稱', '成交股數', '成交筆數', '成交金額',
-                       '開盤價', '最高價', '最低價', '收盤價', '漲跌(+ / -)',
-                       '漲跌價差', '最後揭示買價', '最後揭示買量', '最後揭示賣價', '最後揭示賣量',
-                       '本益比')
+        self.day_fields = ('證券代號', '證券名稱', '成交股數', '成交筆數', '成交金額',
+                           '開盤價', '最高價', '最低價', '收盤價', '漲跌(+ / -)',
+                           '漲跌價差', '最後揭示買價', '最後揭示買量', '最後揭示賣價', '最後揭示賣量',
+                           '本益比')
+        self.month_fields = ('公司代號', '公司名稱', '當月營收', '上月營收', '去年當月營收',
+                             '上月比較增減(%)', '去年同月增減(%)', '當月累計營收', '去年累計營收', '前期比較增減(%)')
+
         # 偽瀏覽器
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit \
                           /537.36 (KHTML, like Gecko) Chrome/ 39.0.2171.95 Safari / 537.36'}
         self.day_filter = []
+        self.month_filter = []
 
-    def day_stock(self, target_date):
-        r = requests.post('http://www.twse.com.tw/exchangeReport/MI_INDEX?response=csv&date=' + str(target_date)
-                          + '&type=ALL')
+    def day_stock(self, day):
+        url = 'http://www.twse.com.tw/exchangeReport/MI_INDEX?response=csv&date=' + str(day) + '&type=ALL'
+        r = requests.post(url, self.headers)
         df = pd.read_csv(StringIO("\n".join([i.translate({ord(c): None for c in ' '})
                                              for i in r.text.split('\n')
                                              if len(i.split('",')) == 17 and i[0] != '='])), header=0)
         return df
 
-    def month_stock(self, year, month):
+    def month_stock_steam(self, t_month):
+        year = t_month[0]
+        month = t_month[1]
         # 假如是西元，轉成民國
         if year > 1990:
             year -= 1911
@@ -40,65 +46,75 @@ class StockMarket(object):
         # 下載該年月的網站，並用pandas轉換成 dataframe
         r = requests.get(url, self.headers)
         r.encoding = 'big5'
-        return pd.read_html(StringIO(r.text))
-
-    @staticmethod
-    def filter_df(input_df, field, operator, value):
-        selected_df = input_df
-        if operator == '==':
-            selected_df = input_df[pd.to_numeric(input_df[field], errors='coerce') == value]
-        elif operator == '!=':
-            selected_df = input_df[pd.to_numeric(input_df[field], errors='coerce') != value]
-        elif operator == '>':
-            selected_df = input_df[pd.to_numeric(input_df[field], errors='coerce') > value]
-        elif operator == '<':
-            selected_df = input_df[pd.to_numeric(input_df[field], errors='coerce') < value]
-        elif operator == '<=':
-            selected_df = input_df[pd.to_numeric(input_df[field], errors='coerce') <= value]
-        elif operator == '>=':
-            selected_df = input_df[pd.to_numeric(input_df[field], errors='coerce') >= value]
-        else:
-            print('filter_df: wrong parameter !!!')
-        return selected_df
-
-    @staticmethod
-    def save_excel_file(data_frame, file_name):
-        # data_frame.to_csv(file_name + '.csv', encoding='utf-8', index=False)
-        data_frame.to_excel(file_name + '.xls', encoding='utf-8', index=False)
-
-    def day_report(self, day, day_filter):
-        print(day_filter)
-        df = self.day_stock(day)
-        if day_filter is not []:
-            for i in range(0, len(day_filter), 3):
-                df = StockMarket.filter_df(df, self.fields[day_filter[i]], day_filter[i+1], day_filter[i+2])
-                print(df.shape)
-        StockMarket.save_excel_file(df, str(day) + '_day_report')
-        return df
-
-    def monthly_report(self, year, month):
-        html_df = self.month_stock(year, month)
-     #   StockMarket.save_excel_file(html_df, 'First')
-     #   StockMarket.save_excel_file(html_df[0], 'Second')
-
+        html_df = pd.read_html(StringIO(r.text))
         # 處理一下資料
         if html_df[0].shape[0] > 500:
             df = html_df[0].copy()
-            print('E')
         else:
             df = pd.concat([df for df in html_df if df.shape[1] <= 11])
-            print('F')
-        # use a list to contain multiple columns
-        df = df[list(range(0, 10))]
-        column_index = df.index[(df[0] == '公司代號')][0]
-        df.columns = df.iloc[column_index]
-        df['當月營收'] = pd.to_numeric(df['當月營收'], 'coerce')
-        df = df[~df['當月營收'].isnull()]
-        df = df[df['公司代號'] != '合計']
-        StockMarket.save_excel_file(df, str(year) + '_' + str(month) + '_month_report')
+        return df
+
+    def month_stock(self, t_month):
+        month_df = self.month_stock_steam(t_month)
+
+        m_df = month_df.copy()
+        m_df = m_df[list(range(10))]
+
+        column_index = m_df.index[(m_df[0] == '公司代號')][0]
+        # print('column_index', column_index, m_df.index[(m_df[0] == '公司代號')])
+        m_df.columns = m_df.iloc[column_index]
+        # print(m_df.columns)
+        m_df['當月營收'] = pd.to_numeric(m_df['當月營收'], 'coerce')
+        # print(m_df['當月營收'])
+        # remove dummy data
+        m_df = m_df[~m_df['當月營收'].isnull()]
+        # print(m_df.head())
+        m_df = m_df[m_df['公司代號'] != '合計']
         # 偽停頓
         time.sleep(5)
-        return df
+        return m_df
+
+    @staticmethod
+    def filter_df(i_df, c_filter):
+        # print('c_filter', c_filter)
+        field = c_filter[0]
+        operator = c_filter[1]
+        value = c_filter[2]
+        if operator == '==':
+            selected_df = i_df[pd.to_numeric(i_df[field], errors='coerce') == value]
+        elif operator == '!=':
+            selected_df = i_df[pd.to_numeric(i_df[field], errors='coerce') != value]
+        elif operator == '>':
+            selected_df = i_df[pd.to_numeric(i_df[field], errors='coerce') > value]
+        elif operator == '<':
+            selected_df = i_df[pd.to_numeric(i_df[field], errors='coerce') < value]
+        elif operator == '<=':
+            selected_df = i_df[pd.to_numeric(i_df[field], errors='coerce') <= value]
+        elif operator == '>=':
+            selected_df = i_df[pd.to_numeric(i_df[field], errors='coerce') >= value]
+        else:
+            selected_df = i_df
+            print('filter_df: wrong parameter !!!')
+        return selected_df
+
+    def day_stock_filter_report(self, day):
+        day_df = self.day_stock(day)
+        s_df = day_df.copy()
+        if self.day_filter:
+            for i in range(0, len(self.day_filter), 3):
+                s_df = StockMarket.filter_df(s_df, self.day_filter[i:i+3])
+        s_df.to_excel(str(day) + '_day_stock_filter_report.xls', encoding='utf-8', index=False)
+        return s_df
+
+    def month_stock_filter_report(self, t_month):
+        month_df = self.month_stock(t_month)
+        s_df = month_df.copy()
+        if self.month_filter:
+            for i in range(0, len(self.month_filter), 3):
+                s_df = StockMarket.filter_df(s_df, self.month_filter[i:i+3])
+        s_df.to_excel(str(t_month[0]) + '_' + str(t_month[1]) + '_month_stock_filter_report.xls', encoding='utf-8',
+                      index=False)
+        return s_df
 
     def financial_statement(self, year, season, type='綜合損益彙總表'):
         if year >= 1000:
@@ -138,9 +154,25 @@ class StockMarket(object):
 
 if __name__ == '__main__':
     s = StockMarket()
-    s.day_filter = [15, '<', 15, 15, '!=', 0, 5, '<', 15]
-    s.day_report(20180322, s.day_filter)
-    s.monthly_report(2018, 1)
+    target_day = 20130201
+    target_month = [2013, 2]
+
+    # Deal with daily stock
+    d_stock = s.day_stock(target_day)
+    d_stock.to_excel(str(target_day) + '_day_stock.xls', encoding='utf-8', index=False)
+
+    s.day_filter = ['本益比', '<', 15, '本益比', '!=', 0, '開盤價', '<', 15]
+    print('day_filter:', s.day_filter)
+    s.day_stock_filter_report(target_day)
+
+    # Deal with monthly stock
+    m_stock = s.month_stock(target_month)
+    m_stock.to_excel(str(target_month[0]) + '_' + str(target_month[1]) + '_month_stock.xls', encoding='utf-8',
+                     index=False)
+
+    s.month_filter = ['上月比較增減(%)', '>', 0, '前期比較增減(%)', '>', 0]
+    print('month_filter:', s.month_filter)
+    s.month_stock_filter_report(target_month)
 
 #    df = s.financial_statement(2018, 1, '營益分析彙總表')
     # delete one column
@@ -148,7 +180,6 @@ if __name__ == '__main__':
     # index change to company name
 #    df = df.set_index(['公司名稱'])
 #    print(df)
-#    s.save_excel_file(df, 'Quarter_report')
     # 轉換成數值
 #    df = df.astype(float)
     # 三件事情寫成一行

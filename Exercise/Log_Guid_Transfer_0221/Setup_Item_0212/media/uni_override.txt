@@ -1,5 +1,0 @@
-c:\BIOS\STL-010200\DellBaytrail\IOTMod\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\PostBehavior\DellPostBehavior.uni
-c:\BIOS\STL-010200\DellBaytrail\IOTMod\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\Security\DellSecuritySetup.uni
-c:\BIOS\STL-010200\DellBaytrail\IOTMod\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\SysConfig\DellSysConfig.uni
-c:\BIOS\STL-010200\OEMBOARD\Louis\PlatformMod\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\GeneralDrives\DellGeneralDrivesSetup.uni
-c:\BIOS\STL-010200\OEMBOARD\Louis\PlatformMod\OVERRIDE\DellPkg\DellCommonFeaturePkgs\Setup\PowerManagement\DellPmSetup.uni
