@@ -151,10 +151,10 @@ if __name__ == '__main__':
     #               'c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2',
     #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
     #               '', False)
-    gset = Gset('c:\BIOS\Rugged2\Liv2_99.0.45_Rev1105',
-                'c:\BIOS\Rugged2\Liv2_99.0.45_Rev1105\OEMBOARD\LivingStone2',
-                'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-                'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
+    gset = Gset('c:\BIOS\Rugged2\99.0.50_Rev0803',
+                'c:\BIOS\Rugged2\99.0.50_Rev0803\OEMBOARD\Rugged2',
+                'C:\Code_in_Python\Exercise\Log_Guid_Transfer\Setup_Item',
+                'C:\Code_in_Python\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
     #   gset = Gset('c:\BIOS\STL-010200',
     #               'c:\BIOS\STL-010200\OEMBOARD\Louis',
     #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',

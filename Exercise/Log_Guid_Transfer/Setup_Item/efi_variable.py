@@ -239,8 +239,8 @@ class EfiVariable:
 
 
 if __name__ == '__main__':
-    p_folder = 'c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT'
-    platform_folder = 'c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2'
+    p_folder = 'c:\BIOS\Rugged2\99.0.50_Rev0803'
+    platform_folder = 'c:\BIOS\Rugged2\99.0.50_Rev0803\OEMBOARD\Rugged2'
     used_runtime_variable = False
     external_files_folder = os.getcwd() + '\external_files'
 
