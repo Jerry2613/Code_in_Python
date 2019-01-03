@@ -39,11 +39,11 @@ class EfiVariable:
         self.buildup_setup_dict()
         self.buildup_other_variable_dict()
 
-    def get_setup_variable_dict(self):
-        return self.setup_variable_dict
-
-    def get_other_variable_dict(self):
-        return self.other_variable_dict
+    def get_efi_variable_dict(self, setup=True):
+        if setup:
+            return self.setup_variable_dict
+        else:
+            return self.other_variable_dict
 
     def buildup_setup_dict(self):
         self.setup_variable_data_list = EfiVariable.get_binary_file_data(self.setup_file, 0x28)
@@ -243,5 +243,5 @@ if __name__ == '__main__':
     token_dict = {}
     efi_variable = EfiVariable(external_files_folder, p_folder, platform_folder, os.getcwd(), token_dict,
                                used_runtime_variable, True)
-    setup_variable_dict = efi_variable.get_setup_variable_dict()
-    other_variable_dict = efi_variable.get_other_variable_dict()
+    setup_variable_dict = efi_variable.get_efi_setup_variable_dict(setup=True)
+    other_variable_dict = efi_variable.get_efi_setup_variable_dict(setup=False)

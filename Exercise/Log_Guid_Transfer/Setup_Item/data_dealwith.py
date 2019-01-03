@@ -272,7 +272,7 @@ class SkipAction(object):
                 l_value_list = efi_variable.get_field_value(new_line_2_list[0].strip())
                 l_value = str(l_value_list[0])
             elif variable_type == 1:
-                other_variable_dict = efi_variable.get_other_variable_dict()
+                other_variable_dict = efi_variable.get_efi_variable_dict(setup=False)
                 l_value = other_variable_dict[new_line_2_list[0].strip()]
             else:
                 return False
@@ -298,7 +298,7 @@ class SkipAction(object):
                 l_value_list = efi_variable.get_field_value(new_line_2_list[0].strip())
                 l_value = str(l_value_list[0])
             elif variable_type == 1:
-                other_variable_dict = efi_variable.get_other_variable_dict()
+                other_variable_dict = efi_variable.get_efi_variable_dict(setup=False)
                 l_value = other_variable_dict[new_line_2_list[0].strip()]
             else:
                 return False

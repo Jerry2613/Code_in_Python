@@ -99,9 +99,9 @@ class Gset(object):
         self.show_message_on_logger('Build up the setup_variable_dict')
         efi_variable = EfiVariable(self.external_files_folder, self.p_folder, self.platform_folder, self.output_folder,
                                    token_dict, self.used_runtime_variable, False)
-        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_setup_variable_dict()),
+        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_efi_setup_variable_dict(setup=True)),
                                         'setup_variable_dict.txt')
-        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_other_variable_dict()),
+        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_efi_setup_variable_dict(setup=False)),
                                         'other_variable_dict.txt')
 
         # 1.4 handle suppressif
