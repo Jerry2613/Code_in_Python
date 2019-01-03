@@ -2,6 +2,7 @@ import os
 import sys
 import logging
 import re
+import pandas as pd
 sys.path.append(os.path.dirname(os.getcwd()))
 from Transfer_Guid_To_Name import FileLocation
 from excel_rw import ExcelRw
@@ -16,28 +17,28 @@ from file_dealwith import FileDealWith
 class Gset(object):
 
     def __init__(self, project_folder, platform_folder, output_folder, external_files_folder,
-                 runtime_variable_enable, logger=''):
-        self.p_folder = project_folder
-        self.platform_folder = platform_folder
-        self.output_folder = output_folder
-        self.used_runtime_variable = runtime_variable_enable
-        self.logger2 = logger
-        self.output_folder_data = output_folder + '\data'
-        self.cwd_setup_item_folder = os.getcwd()
+                 runtime_variable_enable, logger=False):
+        self.setup_dict = dict()
+        self.setup_dict['project_folder'] = project_folder
+        self.setup_dict['platform_folder'] = platform_folder
+        self.setup_dict['used_runtime_variable'] = runtime_variable_enable
+        self.setup_dict['enable_debug'] = False
+        self.setup_dict['output_folder'] = output_folder
+        self.setup_dict['output_folder_data'] = output_folder + '\data'
+        self.setup_dict['cwd_setup_item_folder'] = os.getcwd()
+        self.setup_dict['logger2'] = logger
         if not re.search('Setup_Item', os.getcwd(), re.IGNORECASE):
-            self.cwd_setup_item_folder = os.getcwd() + '\Setup_Item'
+            self.setup_dict['cwd_setup_item_folder'] = os.getcwd() + '\Setup_Item'
         if external_files_folder == '':
-            self.external_files_folder = self.cwd_setup_item_folder + '\external_files'
+            self.setup_dict['external_files_folder'] = self.setup_dict['cwd_setup_item_folder'] + '\external_files'
         else:
-            self.external_files_folder = external_files_folder
+            self.setup_dict['external_files_folder'] = external_files_folder
 
-        self.dpf_expertkeystrings_file = self.cwd_setup_item_folder + '\dpf_files\ExpertKeyStrings.uni'
-        self.dpf_expertkeyvfr_file = self.cwd_setup_item_folder + '\dpf_files\ExpertKeyVfr.vfr'
+        self.setup_dict['dpf_expertkeystrings_file'] = self.setup_dict['cwd_setup_item_folder'] + '\dpf_files\ExpertKeyStrings.uni'
+        self.setup_dict['dpf_expertkeyvfr_file'] = self.setup_dict['cwd_setup_item_folder'] + '\dpf_files\ExpertKeyVfr.vfr'
 
     def show_message_on_logger(self, message):
-        if self.logger2 == '':
-            pass
-        else:
+        if self.setup_dict['logger2']:
             self.logger2.info(message)
 
     def produce_gset_items_excel_file(self):
@@ -51,19 +52,19 @@ class Gset(object):
         ch.setFormatter(formatter)
         logger.addHandler(ch)
 
-        if not os.path.exists(self.output_folder_data):
-            os.makedirs(self.output_folder_data)
-        FileDealWith.update_output_folder(self.output_folder_data, self.platform_folder)
+        if not os.path.exists(self.setup_dict['output_folder_data']):
+            os.makedirs(self.setup_dict['output_folder_data'])
+        FileDealWith.update_output_folder(self.setup_dict['output_folder_data'], self.setup_dict['platform_folder'])
 
         # (0) build up token dictionary
         self.show_message_on_logger('Build up the token dictionary')
-        setup_switch = SetupSwitch(self.p_folder, self.platform_folder)
+        setup_switch = SetupSwitch(self.setup_dict['project_folder'], self.setup_dict['platform_folder'])
         token_dict = setup_switch.get_token_dict()
         FileDealWith.write_list_to_file(DictHandle.extract_items(token_dict), 'token_dict.txt')
 
         # (0.1) build up PID, DaToken, PID_DaToken dictionary
         self.show_message_on_logger('Build up PID, DaToken, PID_DaToken dictionaries')
-        pid_token = PidDaToken(self.p_folder)
+        pid_token = PidDaToken(self.setup_dict['project_folder'])
         pid_dict, datoken_dict, pid_token_dict = pid_token.get_pid_datoken_dict()
         FileDealWith.write_list_to_file(DictHandle.extract_items(pid_dict), 'pid_dict.txt')
         FileDealWith.write_list_to_file(DictHandle.extract_items(datoken_dict), 'datoken_dict.txt')
@@ -71,8 +72,8 @@ class Gset(object):
 
         # (0.2) build up string_dict
         self.show_message_on_logger('Build up the string_dict')
-        uni = FileLocation(root=self.p_folder, filename_extension='.uni')
-        uni.target_files.append(self.dpf_expertkeystrings_file)
+        uni = FileLocation(root=self.setup_dict['project_folder'], filename_extension='.uni')
+        uni.target_files.append(self.setup_dict['dpf_expertkeystrings_file'])
 
         uni_list = FileDealWith(uni.target_files, 'uni_origin.txt', 'uni_override.txt', 'uni_del.txt', 'uni_final.txt')
         setup_string = SetupString(uni_list.get_active_file_list())
@@ -81,8 +82,8 @@ class Gset(object):
 
         # (1) build up sd define template
         self.show_message_on_logger('Build up the sd define template')
-        sd = FileLocation(root=self.p_folder, filename_extension='.sd')
-        sd.target_files.append(self.dpf_expertkeyvfr_file)
+        sd = FileLocation(root=self.setup_dict['project_folder'], filename_extension='.sd')
+        sd.target_files.append(self.setup_dict['dpf_expertkeyvfr_file'])
 
         sd_list = FileDealWith(sd.target_files, 'sd_origin.txt', 'sd_override.txt', 'sd_del.txt', 'sd_final.txt')
         sd_dealwith = SdDealWith(sd_list.get_active_file_list(), token_dict)
@@ -97,12 +98,16 @@ class Gset(object):
 
         # 1.3 build up setup variable field value dictionary
         self.show_message_on_logger('Build up the setup_variable_dict')
-        efi_variable = EfiVariable(self.external_files_folder, self.p_folder, self.platform_folder, self.output_folder,
-                                   token_dict, self.used_runtime_variable, False)
-        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_efi_setup_variable_dict(setup=True)),
-                                        'setup_variable_dict.txt')
-        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_efi_setup_variable_dict(setup=False)),
-                                        'other_variable_dict.txt')
+        efi_variable = EfiVariable(self.setup_dict, token_dict)
+        df_local_dict = pd.DataFrame.from_dict(efi_variable.get_local_dict(), orient='index')
+        df_setup_var = pd.DataFrame.from_dict(efi_variable.get_efi_variable_dict(setup=True), orient='index')
+        df_other_var = pd.DataFrame.from_dict(efi_variable.get_efi_variable_dict(setup=False), orient='index')
+        # Pandas writeExcel with Xlwt:xls and openpyxl:xlsx
+        writer = pd.ExcelWriter(self.setup_dict['output_folder_data'] + '\\Z_DumpVariable.xlsx')
+        df_local_dict.to_excel(writer, sheet_name='local_dict')
+        df_setup_var.to_excel(writer, sheet_name='setup_var')
+        df_other_var.to_excel(writer, sheet_name='other_var')
+        writer.save()
 
         # 1.4 handle suppressif
         self.show_message_on_logger('Handle suppressif')
@@ -118,7 +123,7 @@ class Gset(object):
 
         # 2.0 walk through layer
         self.show_message_on_logger('Walk through setup')
-        setup = GsetTree(self.p_folder, token_dict, efi_variable, sd_formid_list, sd_define_list)
+        setup = GsetTree(self.setup_dict['project_folder'], token_dict, efi_variable, sd_formid_list, sd_define_list)
         gset_dict, layer_list = setup.get_gsetdict_layerlist()
         total_key = list(gset_dict.keys())
         FileDealWith.write_list_to_file(total_key, 'total_key.txt')
@@ -134,10 +139,10 @@ class Gset(object):
         #    print(i)
 
         # write to excel
-        directory = self.output_folder + '\Release'
+        directory = self.setup_dict['output_folder'] + '\Release'
         if not os.path.exists(directory):
             os.makedirs(directory)
-        p = ExcelRw(self.output_folder + '\Release\DA_Token_Setup.xls')
+        p = ExcelRw(self.setup_dict['output_folder'] + '\Release\DA_Token_Setup.xls')
         p.write_table_and_save('Gset', setup_table)
         self.show_message_on_logger('Finish')
 

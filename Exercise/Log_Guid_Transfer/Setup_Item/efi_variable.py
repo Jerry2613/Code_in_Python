@@ -1,43 +1,55 @@
 import re
 import os
 import sys
+import pandas as pd
 sys.path.append(os.path.dirname(os.getcwd()))
 from Transfer_Guid_To_Name import FileLocation
 
 
 class EfiVariable:
 
-    def __init__(self, external_files_folder, project_folder, platform_folder, output_folder, token_dict,
-                 used_runtime_variable, enable_debug):
-        self.external_files_folder = external_files_folder
-        self.project_folder = project_folder
-        self.platform_folder = platform_folder
-        self.output_folder = output_folder
+    def __init__(self, input_dict, token_dict):
+        #  input_dict:
+        #    project_folder
+        #    platform_folder
+        #    used_runtime_variable
+        #    external_files_folder
+        #    enable_debug
+        #    output_folder
+        #  extend on local_dict
+        #    bios_default_binary_file
+        #    setup_definition_file
+        #    setup_binary_file
+        #    bootmanager_definition_file
+        #    bootmanager_binary_file
+        #    amitsemode_definition_file
+        #    (???) AmiTseMode variable under UEFI shell
+        #    setupamtfeatures_binary_file
+        self.local_dict = input_dict
         self.token_dict = token_dict
-        self.debug_show = enable_debug
-        self.setup_variable_define_filename = 'HardcodedSetupData.h'
-        if used_runtime_variable:
-            self.setup_file = external_files_folder + '\setup.bin'
+        self.local_dict['setup_definition_file'] = 'HardcodedSetupData.h'
+        if input_dict['used_runtime_variable']:
+            self.local_dict['setup_binary_file'] = input_dict['external_files_folder'] + '\setup.bin'
         else:
-            self.bios_default_filename = 'Defaults.bin'
-            self.setup_variable_default_file = self.output_folder + '\data\setup_default.bin'
+            self.local_dict['bios_default_binary_file'] = 'Defaults.bin'
+            self.local_dict['setup_binary_file'] = input_dict['output_folder'] + '\data\setup_default.bin'
             self.extract_variable_from_bios_default_file()
-            self.setup_file = self.setup_variable_default_file
-        self.bootmanager_file = None
-        self.setupamtfeatures_file = None
-        if os.path.isfile(external_files_folder + '\BootManager.bin'):
-            self.bootmanager_file = external_files_folder + '\BootManager.bin'
-        if os.path.isfile(external_files_folder + '\SetupAmtFeatures.bin'):
-            self.setupamtfeatures_file = external_files_folder + '\SetupAmtFeatures.bin'
-
-        self.setup_variable_data_list = []
-        self.setupprep_define_file = project_folder + '\DellPkg\Include\SetupPrep.h'
-        self.amivfr_define_file = project_folder + '\AmiTsePkg\Include\AMIVfr.h'
+        if os.path.isfile(input_dict['external_files_folder'] + '\BootManager.bin'):
+            self.local_dict['bootmanager_binary_file'] = input_dict['external_files_folder'] + '\BootManager.bin'
+        if os.path.isfile(input_dict['external_files_folder'] + '\SetupAmtFeatures.bin'):
+            self.local_dict['setupamtfeatures_binary_file'] = input_dict['external_files_folder'] + \
+                                                              '\SetupAmtFeatures.bin'
+        
+        self.local_dict['amitsemode_definition_file'] = input_dict['project_folder'] + '\DellPkg\Include\SetupPrep.h'
+        self.local_dict['bootmanager_definition_file'] = input_dict['project_folder'] + '\AmiTsePkg\Include\AMIVfr.h'
         self.setup_variable_dict = {}
         self.other_variable_dict = {}
 
         self.buildup_setup_dict()
         self.buildup_other_variable_dict()
+
+    def get_local_dict(self):
+        return self.local_dict
 
     def get_efi_variable_dict(self, setup=True):
         if setup:
@@ -46,16 +58,17 @@ class EfiVariable:
             return self.other_variable_dict
 
     def buildup_setup_dict(self):
-        self.setup_variable_data_list = EfiVariable.get_binary_file_data(self.setup_file, 0x28)
+        setup_variable_data_list = EfiVariable.extract_data_from_binary_file(self.local_dict['setup_binary_file'], 0x28)
         # (1) Build/GenericSetupDataDefinition.h insert a field: Numlock
         index = 0
-        data = [self.setup_variable_data_list[0]]
+        data = [setup_variable_data_list[0]]
         self.setup_variable_dict['Numlock'] = data
         index += 1
 
         # (2) HardcodedSetupData.h
-        define_file = FileLocation(root=self.platform_folder, filename_extension=self.setup_variable_define_filename)
-        print('===HardcodedSetupData.h full path:', define_file.target_files)
+        define_file = FileLocation(root=self.local_dict['platform_folder'],
+                                   filename_extension=self.local_dict['setup_definition_file'])
+        print('===', self.local_dict['setup_definition_file'], 'Full path:', define_file.target_files)
         with open(define_file.target_files[0], "r") as field_define:
             for line in field_define:
                 new_line = line.replace(';', '').replace('//', ' // ').split('//')[0]
@@ -63,51 +76,44 @@ class EfiVariable:
                 if re.match('UINT', new_line_2, re.IGNORECASE) or re.match('CHAR', new_line_2, re.IGNORECASE):
                     field_size = EfiVariable.get_field_size(new_line_2)
                     if re.search('\[', new_line_2, re.IGNORECASE):
-                        new_line_2_list = new_line_2.split('[',)
-                        new_line_3 = " ".join(new_line_2_list[0].split())
-                        new_line_3_list = new_line_3.split(' ')
-                        key = new_line_3_list[1]
-                        array_number = new_line_2_list[1].split(']')[0].strip()
+                        line_3_list = new_line_2.replace('[', ' ').replace(']', ' ').split(' ')
+                        line_4_list = [x for x in line_3_list if x is not '']
+                        array_number = line_4_list[2]
                         if re.search('0x', array_number, re.IGNORECASE):
                             array_number = int(array_number, 16)  # int(STRING, BASE)
                         else:
                             array_number = int(array_number)
-                        # print('##index', hex(0x28 + index))
-                        array_data = ['ARRAY']
+                        # print('##array_number:', array_number, '##index', hex(0x28 + index))
+                        data = ['ARRAY']
                         for j in range(array_number):
-                            data = []
-                            for i in range(field_size):
-                                data.append(self.setup_variable_data_list[index])
-                                index += 1
-                            array_data.append(data)
-                        # print('##key', key, '##array_number', array_number, '##array_data', array_data)
-                        self.setup_variable_dict[key] = array_data
+                            sub_data = [setup_variable_data_list[index + i] for i in range(field_size)]
+                            index += field_size
+                            data.append(sub_data)
                     else:
-                        new_line_2_list = new_line_2.split(' ')
-                        key = new_line_2_list[1]
-                        data = []
+                        line_4_list = new_line_2.split(' ')
                         # print('@@index', hex(0x28 + index))
-                        for i in range(field_size):
-                            data.append(self.setup_variable_data_list[index])
-                            index += 1
-                        # print('@@key', key, '@@data', data)
-                        self.setup_variable_dict[key] = data
-        if self.debug_show:
+                        data = [setup_variable_data_list[index+i] for i in range(field_size)]
+                        index += field_size
+                    key = line_4_list[1]
+                    # print('@@key', key, '@@data', data)
+                    self.setup_variable_dict[key] = data
+        if self.local_dict['enable_debug']:
             self.show_setup_variable_dict()
-            print('### setup_variable_dict: data size',  len(self.setup_variable_data_list), ' data used:', index)
+            print('### setup_variable_dict: data size',  len(setup_variable_data_list), ' data used:', index)
 
     def buildup_other_variable_dict(self):
         # 1.0 AMITSEMODE
         # I can't find AmiTseMode variable under UEFI shell
         # Current i set all fields' value to 0 (default value)
-        field_structure = self.get_focus_data_struct('AMITSEMODE', self.setupprep_define_file)
+        field_structure = self.get_focus_data_struct('AMITSEMODE', self.local_dict['amitsemode_definition_file'])
         for index in range(0, len(field_structure), 2):
             self.other_variable_dict['AMITSEMODE.' + field_structure[index]] = '0'
 
         # 1.1 BOOT_MANAGER
-        if self.bootmanager_file is not None:
-            field_structure = self.get_focus_data_struct('BOOT_MANAGER', self.amivfr_define_file)
-            data = EfiVariable.get_binary_file_data(self.bootmanager_file, 0x34)
+        #   if self.local_dict['bootmanager_binary_file'] is not None:
+        if 'bootmanager_binary_file' in self.local_dict.keys():
+            field_structure = self.get_focus_data_struct('BOOT_MANAGER', self.local_dict['bootmanager_definition_file'])
+            data = EfiVariable.extract_data_from_binary_file(self.local_dict['bootmanager_binary_file'], 0x34)
             for index in range(0, len(field_structure), 2):
                 if field_structure[index+1] == 2:
                     a0 = int(str(data[0]), 16)
@@ -120,11 +126,11 @@ class EfiVariable:
         # 1.2 SETUP_AMT_FEATURES
         # Structure is under chipset folder KabylakePlatSamplePkg\Setup\MeSetup.h'
         # this tool is cross platform. so i just copy the structure from this file
-        if self.setupamtfeatures_file is not None:
+        if 'setupamtfeatures_binary_file' in self.local_dict.keys():
             field_structure = ['GrayOut', 1]
-            data = EfiVariable.get_binary_file_data(self.setupamtfeatures_file, 0x3e)
+            data = EfiVariable.extract_data_from_binary_file(self.local_dict['setupamtfeatures_binary_file'], 0x3e)
             self.other_variable_dict['SETUP_AMT_FEATURES.' + field_structure[index]] = int(str(data[0]), 16)
-            if self.debug_show:
+            if self.local_dict['enable_debug']:
                 print('### other_variable_dict:', self.other_variable_dict.items())
 
     def get_field_value(self, field):
@@ -143,7 +149,7 @@ class EfiVariable:
         return value
 
     @staticmethod
-    def get_binary_file_data(file_name, start_index):
+    def extract_data_from_binary_file(file_name, start_index):
         with open(file_name, "rb") as binary_file:
             binary_file.seek(start_index)
             b_data = binary_file.read()
@@ -151,11 +157,12 @@ class EfiVariable:
         return data
 
     def extract_variable_from_bios_default_file(self):
-        d_file = FileLocation(root=self.project_folder + '\Build', filename_extension=self.bios_default_filename)
-        print('===Defaults.bin full path:', d_file.target_files)
+        d_file = FileLocation(root=self.local_dict['project_folder'] + '\Build',
+                              filename_extension=self.local_dict['bios_default_binary_file'])
+        print('===', self.local_dict['bios_default_binary_file'], 'Full path:', d_file.target_files)
         with open(d_file.target_files[0], "rb") as binary_file:
             variable_number = 0
-            binary_file.seek(0, 2)    # Seek the end
+            binary_file.seek(0, 2)            # Seek the end
             num_bytes = binary_file.tell()    # Get the file size
             for i in range(num_bytes):
                 binary_file.seek(i)
@@ -165,7 +172,7 @@ class EfiVariable:
                     if variable_number == 3:    # setup variable on #2
                         setup_variable_end_location = binary_file.tell()-4
                         print("Reach setup data end:", setup_variable_end_location)
-                        with open(self.setup_variable_default_file, "wb") as outfile:
+                        with open(self.local_dict['setup_binary_file'], "wb") as outfile:
                             binary_file.seek(0)
                             data = binary_file.read(setup_variable_end_location)
                             outfile.write(data)
@@ -173,19 +180,12 @@ class EfiVariable:
 
     @staticmethod
     def get_field_size(line):
-        size = 0
-        if re.match('UINT8', line, re.IGNORECASE):
-            size = 1
-        elif re.match('UINT16', line, re.IGNORECASE):
-            size = 2
-        elif re.match('UINT32', line, re.IGNORECASE):
-            size = 4
-        elif re.match('UINT64', line, re.IGNORECASE):
-            size = 8
-        elif re.match('CHAR8', line, re.IGNORECASE):
-            size = 1
-        elif re.match('CHAR16', line, re.IGNORECASE):
-            size = 2
+        f_size = 0
+        line_unit = line.split(' ')[0]
+        if re.match('UINT', line, re.IGNORECASE) or re.match('CHAR', line, re.IGNORECASE):
+            f_size = line_unit.replace('UINT', '').replace('CHAR', '').strip()
+        size = int(int(f_size) / int(8))
+        # print('===line:', line, ', line_unit:', line_unit, 'size', size)
         return size
 
     def get_focus_data_struct(self, struct_name, struct_location):
@@ -223,8 +223,7 @@ class EfiVariable:
 
     def show_setup_variable_dict(self):
         print('~~~~~~~~~~setup_variable_dict~~~~~~~~~~~~~~~~~~')
-        field_list = list(self.setup_variable_dict.keys())
-        for i in field_list:
+        for i in self.setup_variable_dict.keys():
             print('Field:', i)
             value = self.setup_variable_dict[i]
             if value[0] == 'ARRAY':
@@ -235,13 +234,22 @@ class EfiVariable:
 
 
 if __name__ == '__main__':
-    p_folder = 'c:\BIOS\Rugged2\99.0.50_Rev0803'
-    platform_folder = 'c:\BIOS\Rugged2\99.0.50_Rev0803\OEMBOARD\Rugged2'
-    used_runtime_variable = False
-    external_files_folder = os.getcwd() + '\external_files'
+    EfiVariable_input_dict = dict()
+    EfiVariable_input_dict['project_folder'] = 'c:\BIOS\Rugged2\99.0.50_Rev0803'
+    EfiVariable_input_dict['platform_folder'] = 'c:\BIOS\Rugged2\99.0.50_Rev0803\OEMBOARD\Rugged2'
+    EfiVariable_input_dict['used_runtime_variable'] = False
+    EfiVariable_input_dict['external_files_folder'] = os.getcwd() + '\external_files'
+    EfiVariable_input_dict['enable_debug'] = True
+    EfiVariable_input_dict['output_folder'] = os.getcwd()
+    EfiVariable_token_dict = {}
+    efi_variable = EfiVariable(EfiVariable_input_dict, EfiVariable_token_dict)
 
-    token_dict = {}
-    efi_variable = EfiVariable(external_files_folder, p_folder, platform_folder, os.getcwd(), token_dict,
-                               used_runtime_variable, True)
-    setup_variable_dict = efi_variable.get_efi_setup_variable_dict(setup=True)
-    other_variable_dict = efi_variable.get_efi_setup_variable_dict(setup=False)
+    df_local_dict = pd.DataFrame.from_dict(efi_variable.get_local_dict(), orient='index')
+    df_setup_var = pd.DataFrame.from_dict(efi_variable.get_efi_variable_dict(setup=True), orient='index')
+    df_other_var = pd.DataFrame.from_dict(efi_variable.get_efi_variable_dict(setup=False), orient='index')
+    # Pandas writeExcel with Xlwt:xls and openpyxl:xlsx
+    writer = pd.ExcelWriter('Z_DumpVariable.xlsx')
+    df_local_dict.to_excel(writer, sheet_name='local_dict')
+    df_setup_var.to_excel(writer, sheet_name='setup_var')
+    df_other_var.to_excel(writer, sheet_name='other_var')
+    writer.save()
