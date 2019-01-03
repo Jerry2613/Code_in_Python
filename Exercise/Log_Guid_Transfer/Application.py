@@ -93,9 +93,7 @@ class ImageDialog(QDialog):
             MessageConsole.err_message_window("Input: Project Location is empty or wrong")
             return
         logger.info("Gather guids")
-        pj = FileLocation()
-        pj.root_path = self.ui.root_path.text()
-        pj.gather_target_files('.dec')
+        pj = FileLocation(root=self.ui.root_path.text(), filename_extension='.dec')
         dec_num = len(pj.target_files)
         pj.gather_target_files('.inf')
         if os.path.isfile(self.allguidtamplefile):

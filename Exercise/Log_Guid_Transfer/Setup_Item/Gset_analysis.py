@@ -71,9 +71,7 @@ class Gset(object):
 
         # (0.2) build up string_dict
         self.show_message_on_logger('Build up the string_dict')
-        uni = FileLocation()
-        uni.root_path = self.p_folder
-        uni.gather_target_files('.uni')
+        uni = FileLocation(root=self.p_folder, filename_extension='.uni')
         uni.target_files.append(self.dpf_expertkeystrings_file)
 
         uni_list = FileDealWith(uni.target_files, 'uni_origin.txt', 'uni_override.txt', 'uni_del.txt', 'uni_final.txt')
@@ -83,9 +81,7 @@ class Gset(object):
 
         # (1) build up sd define template
         self.show_message_on_logger('Build up the sd define template')
-        sd = FileLocation()
-        sd.root_path = self.p_folder
-        sd.gather_target_files('.sd')
+        sd = FileLocation(root=self.p_folder, filename_extension='.sd')
         sd.target_files.append(self.dpf_expertkeyvfr_file)
 
         sd_list = FileDealWith(sd.target_files, 'sd_origin.txt', 'sd_override.txt', 'sd_del.txt', 'sd_final.txt')

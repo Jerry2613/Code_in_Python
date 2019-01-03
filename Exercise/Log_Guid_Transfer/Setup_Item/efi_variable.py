@@ -54,9 +54,7 @@ class EfiVariable:
         index += 1
 
         # (2) HardcodedSetupData.h
-        define_file = FileLocation()
-        define_file.root_path = self.platform_folder
-        define_file.gather_target_files(self.setup_variable_define_filename)
+        define_file = FileLocation(root=self.platform_folder, filename_extension=self.setup_variable_define_filename)
         print('===HardcodedSetupData.h full path:', define_file.target_files)
         with open(define_file.target_files[0], "r") as field_define:
             for line in field_define:
@@ -153,9 +151,7 @@ class EfiVariable:
         return data
 
     def extract_variable_from_bios_default_file(self):
-        d_file = FileLocation()
-        d_file.root_path = self.project_folder + '\Build'
-        d_file.gather_target_files(self.bios_default_filename)
+        d_file = FileLocation(root=self.project_folder + '\Build', filename_extension=self.bios_default_filename)
         print('===Defaults.bin full path:', d_file.target_files)
         with open(d_file.target_files[0], "rb") as binary_file:
             variable_number = 0

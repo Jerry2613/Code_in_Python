@@ -25,9 +25,7 @@ class GsetTree(object):
     def walk_through_setup(self):
         self.layer_list.append("Layer_L0")
 
-        gset = FileLocation()
-        gset.root_path = self.folder
-        gset.gather_target_files('DellSetup.sd')
+        gset = FileLocation(root=self.folder, filename_extension='DellSetup.sd')
         main = FileDealWith(gset.target_files)
         target_file = main.get_active_file_list()
 

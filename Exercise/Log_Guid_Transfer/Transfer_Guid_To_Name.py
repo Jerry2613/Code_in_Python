@@ -3,9 +3,11 @@ import glob
 
 
 class FileLocation(object):
-    def __init__(self):
-        self.project_root = 'c:\bios'
+    def __init__(self, root='c:\bios', filename_extension=None):
+        self.project_root = root
         self.target_files = []
+        if filename_extension is not None:
+            self.gather_target_files(filename_extension)
 
     @property
     def root_path(self):
@@ -138,9 +140,7 @@ class GuidAction(object):
 
 if __name__ == '__main__':
     # Find out all dec files in target project
-    pj = FileLocation()
-    pj.root_path = 'c:\BIOS\Rugged2\99.0.75_Rev1206'
-    pj.gather_target_files('.dec')
+    pj = FileLocation(root='c:\BIOS\Rugged2\99.0.75_Rev1206', filename_extension='.dec')
 
     # Find out unique GUID and save to file
     for file in pj.target_files:
@@ -149,9 +149,7 @@ if __name__ == '__main__':
 
     # find out .inf guid
     if True:
-        inf = FileLocation()
-        inf.root_path = 'c:\BIOS\Rugged2\99.0.75_Rev1206'
-        inf.gather_target_files('.inf')
+        inf = FileLocation(root='c:\BIOS\Rugged2\99.0.75_Rev1206', filename_extension='.inf')
 
         # Find out unique GUID and save to file
         for file in inf.target_files:
