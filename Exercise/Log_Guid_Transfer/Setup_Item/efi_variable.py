@@ -243,5 +243,5 @@ if __name__ == '__main__':
     token_dict = {}
     efi_variable = EfiVariable(external_files_folder, p_folder, platform_folder, os.getcwd(), token_dict,
                                used_runtime_variable, True)
-    setup_variable_dict = efi_variable.get_efi_setup_variable_dict(setup=True)
-    other_variable_dict = efi_variable.get_efi_setup_variable_dict(setup=False)
+    setup_variable_dict = efi_variable.get_efi_variable_dict(setup=True)
+    other_variable_dict = efi_variable.get_efi_variable_dict(setup=False)
