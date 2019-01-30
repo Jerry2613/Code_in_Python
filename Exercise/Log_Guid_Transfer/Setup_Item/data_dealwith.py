@@ -1,15 +1,34 @@
+import os
 import re
+import pandas as pd
+import numpy as np
+from openpyxl import load_workbook
 
 
-class DictHandle(object):
-    def __init__(self):
-        pass
+class DataSave(object):
+    @staticmethod
+    def dict_to_csv(dictionary, o_folder, w_file, encode_mode='utf-8'):
+        df_save = pd.DataFrame.from_dict(dictionary, orient='index')
+        df_save.to_csv(o_folder + '\\' + w_file, header=False, sep='\t', encoding=encode_mode)
 
     @staticmethod
-    def extract_items(dictionary):
-        items_touple = list(dictionary.items())
-        items_list = [list(item) for item in items_touple]
-        return items_list
+    def list_to_txt(list_data, o_folder, w_file):
+        np.savetxt(o_folder + '\\' + w_file, list_data, delimiter=" ", fmt="%s")
+
+    @staticmethod
+    def dict_to_xlsx(dictionary, o_folder, w_file, sheet):
+        f_path_name = o_folder + '\\' + w_file
+        #
+        # Pandas writeExcel with Xlwt:xls and openpyxl:xlsx
+        #
+        writer = pd.ExcelWriter(f_path_name, engine='openpyxl')
+        if os.path.isfile(f_path_name):
+            book = load_workbook(f_path_name)
+            writer.book = book
+            writer.sheets = dict((ws.title, ws) for ws in book.worksheets)
+        df_local_dict = pd.DataFrame.from_dict(dictionary, orient='index')
+        df_local_dict.to_excel(writer, sheet_name=sheet)
+        writer.save()
 
 
 class FlowControl(object):
@@ -29,14 +48,8 @@ class FlowControl(object):
             del self.control_flow[-1]
         return key
 
-    def get_record(self):
-        return self.control_flow
-
 
 class SkipAction(object):
-    def __init__(self):
-        pass
-
     @staticmethod
     def row(line, re_match_rule=['//'], re_search_rule=None):
         if line.isspace():
@@ -272,7 +285,7 @@ class SkipAction(object):
                 l_value_list = efi_variable.get_field_value(new_line_2_list[0].strip())
                 l_value = str(l_value_list[0])
             elif variable_type == 1:
-                other_variable_dict = efi_variable.get_efi_variable_dict(setup=False)
+                other_variable_dict = efi_variable.other_variable_dict
                 l_value = other_variable_dict[new_line_2_list[0].strip()]
             else:
                 return False
@@ -298,7 +311,7 @@ class SkipAction(object):
                 l_value_list = efi_variable.get_field_value(new_line_2_list[0].strip())
                 l_value = str(l_value_list[0])
             elif variable_type == 1:
-                other_variable_dict = efi_variable.get_efi_variable_dict(setup=False)
+                other_variable_dict = efi_variable.other_variable_dict
                 l_value = other_variable_dict[new_line_2_list[0].strip()]
             else:
                 return False
@@ -423,9 +436,6 @@ class SdDealWith(object):
         self.formid_list = []
         self.buildup_active_information()
 
-    def get_active_information(self):
-        return self.active_information
-
     def get_define_formid_list(self):
         return self.define_list, self.formid_list
 
@@ -518,7 +528,7 @@ class SdDealWith(object):
                         key = local_control_flow.delete_one()
                         if key == '#if':
                             continue
-                        if len(local_control_flow.get_record()) == 0:
+                        if len(local_control_flow.control_flow) == 0:
                             return key_context_list
                     key_context_list.append(next_line.replace('\n', ''))
         return key_context_list

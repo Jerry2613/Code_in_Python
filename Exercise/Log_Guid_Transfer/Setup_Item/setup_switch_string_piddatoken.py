@@ -6,11 +6,12 @@ from file_dealwith import FileDealWith
 
 class SetupSwitch(object):
 
-    def __init__(self, p_folder, oem_folder):
-        self.folder = p_folder
-        self.oem_folder = oem_folder
-        self.DellPkg_Include = p_folder + '\DellPkg\Include'
-        self.DPFPkg_Include = p_folder + '\DPFPkg\DellClientLibPkgs\DellPublicProductionPkg\Include'
+    def __init__(self, o_folder, root, p_folder):
+        self.o_folder = o_folder
+        self.root = root
+        self.p_folder = p_folder
+        self.DellPkg_Include = root + '\DellPkg\Include'
+        self.DPFPkg_Include = root + '\DPFPkg\DellClientLibPkgs\DellPublicProductionPkg\Include'
         self.switch_files = []
         self.token_dict = {}
         self.reference_files()
@@ -18,15 +19,15 @@ class SetupSwitch(object):
 
     def reference_files(self):
         h_files = FileLocation()
-        h_files.target_files.append(self.folder + '\Build\Token.h')
-        h_files.root_path = self.oem_folder
+        h_files.target_files.append(self.root + '\Build\Token.h')
+        h_files.root_path = self.p_folder
         h_files.gather_target_files('.h')
         h_files.root_path = self.DellPkg_Include
         h_files.gather_target_files('.h')
         h_files.root_path = self.DPFPkg_Include
         h_files.gather_target_files('.h')
-        h_files_list = FileDealWith(h_files.target_files, 'h_origin.txt', 'h_override.txt', 'h_del.txt', 'h_final.txt')
-        self.switch_files = h_files_list.get_active_file_list()
+        h_files_list = FileDealWith(self.o_folder, self.p_folder, h_files.target_files, o_file_name='h')
+        self.switch_files = h_files_list.active_file_list
 
     def buildup(self):
         re_search_skip = ['_TOKEN_SDL_H', '__DELL_GSET_ITEM_CFG_H__', '_DELL_SETUP_FIELD_ATTRIB_H']
@@ -71,9 +72,6 @@ class SetupSwitch(object):
                     self.token_dict[line_list[1]] = line_list[2]
         return self.token_dict
 
-    def get_token_dict(self):
-        return self.token_dict
-
 
 class SetupString(object):
 
@@ -81,9 +79,6 @@ class SetupString(object):
         self.string_files_list = string_files_list
         self.string_dict = {}
         self.buildup('eng')
-
-    def get_string_dict(self):
-        return self.string_dict
 
     def buildup(self, language):
         if language == 'eng' or language == 'en-US':
@@ -130,7 +125,10 @@ class SetupString(object):
                 if len(string_data) == 1:
                     self.string_dict[new_element_list[1]] = string_data[0]
                 else:
-                    self.string_dict[new_element_list[1]] = string_data
+                    combined_data = string_data[0]
+                    for i in range(1, len(string_data)):
+                        combined_data += ' ' + string_data[i]
+                    self.string_dict[new_element_list[1]] = combined_data
 
 
 class PidDaToken(object):

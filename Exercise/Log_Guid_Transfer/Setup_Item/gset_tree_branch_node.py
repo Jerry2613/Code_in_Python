@@ -7,8 +7,9 @@ from file_dealwith import FileDealWith
 
 class GsetTree(object):
 
-    def __init__(self, p_folder, token_dict, efi_variable, sd_formid_list, sd_define_list):
-        self.folder = p_folder
+    def __init__(self, o_folder, p_folder, token_dict, efi_variable, sd_formid_list, sd_define_list):
+        self.output_folder = o_folder
+        self.p_folder = p_folder
         self.token_dict = token_dict
         self.efi_variable = efi_variable
         self.formid_list = sd_formid_list
@@ -25,9 +26,9 @@ class GsetTree(object):
     def walk_through_setup(self):
         self.layer_list.append("Layer_L0")
 
-        gset = FileLocation(root=self.folder, filename_extension='DellSetup.sd')
-        main = FileDealWith(gset.target_files)
-        target_file = main.get_active_file_list()
+        gset = FileLocation(root=self.p_folder, filename_extension='DellSetup.sd')
+        main = FileDealWith(self.output_folder, self.p_folder, gset.target_files)
+        target_file = main.active_file_list
 
         with open(target_file[0], "r") as main_form:
             self.catch_mainform_goto(main_form, "SYS_INFO_FORM_ID")

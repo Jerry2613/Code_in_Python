@@ -9,39 +9,39 @@ from efi_variable import EfiVariable
 from setup_tree_data import SetupTreeData
 from gset_tree_branch_node import GsetTree, GsetNode
 from setup_switch_string_piddatoken import SetupSwitch, SetupString, PidDaToken
-from data_dealwith import SdDealWith, FlowControl, SkipAction, DictHandle
+from data_dealwith import SdDealWith, FlowControl, SkipAction, DataSave
 from file_dealwith import FileDealWith
 
 
 class Gset(object):
 
-    def __init__(self, project_folder, platform_folder, output_folder, external_files_folder,
-                 runtime_variable_enable, logger=''):
-        self.p_folder = project_folder
-        self.platform_folder = platform_folder
-        self.output_folder = output_folder
-        self.used_runtime_variable = runtime_variable_enable
-        self.logger2 = logger
-        self.output_folder_data = output_folder + '\data'
-        self.cwd_setup_item_folder = os.getcwd()
-        if not re.search('Setup_Item', os.getcwd(), re.IGNORECASE):
-            self.cwd_setup_item_folder = os.getcwd() + '\Setup_Item'
-        if external_files_folder == '':
-            self.external_files_folder = self.cwd_setup_item_folder + '\external_files'
+    def __init__(self, root, p_folder, o_folder, ext_files_folder, use_runtime_variable, logger=''):
+        self.setup_d = dict()
+        self.setup_d['root'] = root
+        self.setup_d['p_folder'] = p_folder
+        self.setup_d['used_runtime_variable'] = use_runtime_variable
+        self.setup_d['enable_debug'] = False
+        self.setup_d['o_folder'] = o_folder
+        self.setup_d['o_folder_data'] = o_folder + '\data'
+        self.setup_d['logger2'] = logger
+        if re.search('Setup_Item', os.getcwd(), re.IGNORECASE):
+            self.setup_d['setup_item_folder'] = os.getcwd()
         else:
-            self.external_files_folder = external_files_folder
-
-        self.dpf_expertkeystrings_file = self.cwd_setup_item_folder + '\dpf_files\ExpertKeyStrings.uni'
-        self.dpf_expertkeyvfr_file = self.cwd_setup_item_folder + '\dpf_files\ExpertKeyVfr.vfr'
+            self.setup_d['setup_item_folder'] = os.getcwd() + '\Setup_Item'
+        if ext_files_folder == '':
+            self.setup_d['ext_files_folder'] = self.setup_d['setup_item_folder'] + '\external_files'
+        else:
+            self.setup_d['ext_files_folder'] = ext_files_folder
+        self.setup_d['dpf_expertkeystrings'] = self.setup_d['setup_item_folder'] + '\dpf_files\ExpertKeyStrings.uni'
+        self.setup_d['dpf_expertkeyvfr'] = self.setup_d['setup_item_folder'] + '\dpf_files\ExpertKeyVfr.vfr'
 
     def show_message_on_logger(self, message):
-        if self.logger2 == '':
-            pass
-        else:
-            self.logger2.info(message)
+        if self.setup_d['logger2']:
+            self.setup_d['logger2'].info(message)
 
     def produce_gset_items_excel_file(self):
         # create logger
+
         logger = logging.getLogger('PostLog')
         logger.setLevel(logging.DEBUG)
 
@@ -51,79 +51,75 @@ class Gset(object):
         ch.setFormatter(formatter)
         logger.addHandler(ch)
 
-        if not os.path.exists(self.output_folder_data):
-            os.makedirs(self.output_folder_data)
-        FileDealWith.update_output_folder(self.output_folder_data, self.platform_folder)
+        if not os.path.exists(self.setup_d['o_folder_data']):
+            os.makedirs(self.setup_d['o_folder_data'])
 
         # (0) build up token dictionary
         self.show_message_on_logger('Build up the token dictionary')
-        setup_switch = SetupSwitch(self.p_folder, self.platform_folder)
-        token_dict = setup_switch.get_token_dict()
-        FileDealWith.write_list_to_file(DictHandle.extract_items(token_dict), 'token_dict.txt')
+        setup_switch = SetupSwitch(self.setup_d['o_folder_data'], self.setup_d['root'], self.setup_d['p_folder'])
+        token_dict = setup_switch.token_dict
+        DataSave.dict_to_csv(token_dict, self.setup_d['o_folder_data'], 'token_dict.txt')
 
         # (0.1) build up PID, DaToken, PID_DaToken dictionary
         self.show_message_on_logger('Build up PID, DaToken, PID_DaToken dictionaries')
-        pid_token = PidDaToken(self.p_folder)
+        pid_token = PidDaToken(self.setup_d['root'])
         pid_dict, datoken_dict, pid_token_dict = pid_token.get_pid_datoken_dict()
-        FileDealWith.write_list_to_file(DictHandle.extract_items(pid_dict), 'pid_dict.txt')
-        FileDealWith.write_list_to_file(DictHandle.extract_items(datoken_dict), 'datoken_dict.txt')
-        FileDealWith.write_list_to_file(DictHandle.extract_items(pid_token_dict), 'pid_token_dict.txt')
+        DataSave.dict_to_csv(pid_dict, self.setup_d['o_folder_data'], 'pid_dict.txt')
+        DataSave.dict_to_csv(datoken_dict, self.setup_d['o_folder_data'], 'datoken_dict.txt')
+        DataSave.dict_to_csv(pid_token_dict, self.setup_d['o_folder_data'], 'pid_token_dict.txt')
 
         # (0.2) build up string_dict
         self.show_message_on_logger('Build up the string_dict')
-        uni = FileLocation(root=self.p_folder, filename_extension='.uni')
-        uni.target_files.append(self.dpf_expertkeystrings_file)
+        uni = FileLocation(root=self.setup_d['root'], filename_extension='.uni')
+        uni.target_files.append(self.setup_d['dpf_expertkeystrings'])
 
-        uni_list = FileDealWith(uni.target_files, 'uni_origin.txt', 'uni_override.txt', 'uni_del.txt', 'uni_final.txt')
-        setup_string = SetupString(uni_list.get_active_file_list())
-        string_dict = setup_string.get_string_dict()
-        FileDealWith.write_list_to_file(DictHandle.extract_items(string_dict), 'string_dict.txt', 'utf_16_le')
+        uni_list = FileDealWith(self.setup_d['o_folder_data'], self.setup_d['p_folder'], uni.target_files, o_file_name='uni')
+        setup_string = SetupString(uni_list.active_file_list)
+        string_dict = setup_string.string_dict
+        DataSave.dict_to_csv(string_dict, self.setup_d['o_folder_data'], 'string_dict.txt', 'utf_16_le')
 
         # (1) build up sd define template
         self.show_message_on_logger('Build up the sd define template')
-        sd = FileLocation(root=self.p_folder, filename_extension='.sd')
-        sd.target_files.append(self.dpf_expertkeyvfr_file)
+        sd = FileLocation(root=self.setup_d['root'], filename_extension='.sd')
+        sd.target_files.append(self.setup_d['dpf_expertkeyvfr'])
 
-        sd_list = FileDealWith(sd.target_files, 'sd_origin.txt', 'sd_override.txt', 'sd_del.txt', 'sd_final.txt')
-        sd_dealwith = SdDealWith(sd_list.get_active_file_list(), token_dict)
-        FileDealWith.write_list_to_file(sd_dealwith.get_active_information(), 'sd_active_information_b.txt')
+        sd_list = FileDealWith(self.setup_d['o_folder_data'], self.setup_d['p_folder'], sd.target_files, o_file_name='sd')
+        sd_handle = SdDealWith(sd_list.active_file_list, token_dict)
+        DataSave.list_to_txt(sd_handle.active_information, self.setup_d['o_folder_data'], 'sd_active_info_b.txt')
+
         # 1.1 some define is existed on *.sd. we need to renew token_dict
-        token_dict = setup_switch.renew(sd_dealwith.get_active_information())
-        FileDealWith.write_list_to_file(DictHandle.extract_items(token_dict), 'token_renew.txt')
+        token_dict = setup_switch.renew(sd_handle.active_information)
+        DataSave.dict_to_csv(token_dict, self.setup_d['o_folder_data'], 'token_renew.txt')
 
-        # 1.2 base on new token_dict, renew sd_active_information
-        sd_dealwith.renew_active_information_with_new_token_dict(token_dict)
-        FileDealWith.write_list_to_file(sd_dealwith.get_active_information(), 'sd_active_information.txt')
+        # 1.2 base on new token_dict, renew sd_active_info
+        sd_handle.renew_active_information_with_new_token_dict(token_dict)
+        DataSave.list_to_txt(sd_handle.active_information, self.setup_d['o_folder_data'], 'sd_active_info.txt')
 
         # 1.3 build up setup variable field value dictionary
         self.show_message_on_logger('Build up the setup_variable_dict')
-        efi_variable = EfiVariable(self.external_files_folder, self.p_folder, self.platform_folder, self.output_folder,
-                                   token_dict, self.used_runtime_variable, False)
-        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_efi_variable_dict(setup=True)),
-                                        'setup_variable_dict.txt')
-        FileDealWith.write_list_to_file(DictHandle.extract_items(efi_variable.get_efi_variable_dict(setup=False)),
-                                        'other_variable_dict.txt')
+        efi_variable = EfiVariable(self.setup_d, token_dict)
+        efi_variable.save_efivariable_to_file()
 
         # 1.4 handle suppressif
         self.show_message_on_logger('Handle suppressif')
-        sd_dealwith.information_renew_with_suppressif(efi_variable)
-        FileDealWith.write_list_to_file(sd_dealwith.get_active_information(), 'sd_active_information_suppressif.txt')
+        sd_handle.information_renew_with_suppressif(efi_variable)
+        DataSave.list_to_txt(sd_handle.active_information, self.setup_d['o_folder_data'], 'sd_active_info_suppressif.txt')
 
         # 1.5 Build up sd_define_list, sd_formid_list
         self.show_message_on_logger('Build up sd_define_list, sd_formid_list')
-        sd_dealwith.buildup_define_and_formid()
-        sd_define_list, sd_formid_list = sd_dealwith.get_define_formid_list()
-        FileDealWith.write_list_to_file(sd_define_list, 'sd_define_list.txt')
-        FileDealWith.write_list_to_file(sd_formid_list, 'sd_formid_list.txt')
+        sd_handle.buildup_define_and_formid()
+        sd_define_list, sd_formid_list = sd_handle.get_define_formid_list()
+        DataSave.list_to_txt(sd_define_list, self.setup_d['o_folder_data'], 'sd_define_list.txt')
+        DataSave.list_to_txt(sd_formid_list, self.setup_d['o_folder_data'], 'sd_formid_list.txt')
 
         # 2.0 walk through layer
         self.show_message_on_logger('Walk through setup')
-        setup = GsetTree(self.p_folder, token_dict, efi_variable, sd_formid_list, sd_define_list)
+        setup = GsetTree(self.setup_d['o_folder_data'], self.setup_d['root'], token_dict, efi_variable, sd_formid_list, sd_define_list)
         gset_dict, layer_list = setup.get_gsetdict_layerlist()
         total_key = list(gset_dict.keys())
-        FileDealWith.write_list_to_file(total_key, 'total_key.txt')
-        FileDealWith.write_list_to_file(layer_list, 'layer_list.txt')
-        FileDealWith.write_list_to_file(DictHandle.extract_items(gset_dict), 'gset_dict.txt')
+        DataSave.list_to_txt(total_key, self.setup_d['o_folder_data'], 'total_key.txt')
+        DataSave.list_to_txt(layer_list, self.setup_d['o_folder_data'], 'layer_list.txt')
+        DataSave.dict_to_csv(gset_dict, self.setup_d['o_folder_data'], 'gset_dict.txt')
 
         # 3
         self.show_message_on_logger('Write data to excel')
@@ -134,62 +130,18 @@ class Gset(object):
         #    print(i)
 
         # write to excel
-        directory = self.output_folder + '\Release'
+        # todo replace by panda
+        directory = self.setup_d['o_folder'] + '\Release'
         if not os.path.exists(directory):
             os.makedirs(directory)
-        p = ExcelRw(self.output_folder + '\Release\DA_Token_Setup.xls')
+        p = ExcelRw(self.setup_d['o_folder'] + '\Release\DA_Token_Setup.xls')
         p.write_table_and_save('Gset', setup_table)
         self.show_message_on_logger('Finish')
 
 
 if __name__ == '__main__':
-    #   gset = Gset('c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT',
-    #               'c:\BIOS\Rugged2\Liv2_99.0.41_Rev0901_BT\OEMBOARD\LivingStone2',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               '', False)
-    gset = Gset('c:\BIOS\Rugged2\99.0.50_Rev0803',
-                'c:\BIOS\Rugged2\99.0.50_Rev0803\OEMBOARD\Rugged2',
-                'C:\Code_in_Python\Exercise\Log_Guid_Transfer\Setup_Item',
-                'C:\Code_in_Python\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\STL-010200',
-    #               'c:\BIOS\STL-010200\OEMBOARD\Louis',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', True)
-    #   gset = Gset('c:\BIOS\STL-010900',
-    #               'c:\BIOS\STL-010900\OEMBOARD\Louis',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\Rugged2\99.0.67_Rev1016',
-    #               'c:\BIOS\Rugged2\99.0.67_Rev1016\OEMBOARD\Rugged2',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\Rugged2\99.0.54_Rev0839',
-    #               'c:\BIOS\Rugged2\99.0.54_Rev0839\OEMBOARD\Rugged2',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\Rugged2\99.0.41_Rev0719',
-    #               'c:\BIOS\Rugged2\99.0.41_Rev0719\OEMBOARD\Rugged2',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\Ford',
-    #               'c:\BIOS\Ford\OEMBOARD\Ford',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    ### fail , defaults.bin
-    #   gset = Gset('c:\BIOS\Matira3\\1.2.1',
-    #               'c:\BIOS\Matira3\\1.2.1\OEMBOARD\Matira3',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\G7_W99_Rev35734_U7',
-    #               'c:\BIOS\G7_W99_Rev35734_U7\OEMBOARD\BeaverCreek',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\G8_BR99115_rev36200',
-    #               'c:\BIOS\G8_BR99115_rev36200\OEMBOARD\BerlinettaMLK',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    #   gset = Gset('c:\BIOS\G9_BR_MLK_R9975_rev35916',
-    #               'c:\BIOS\G9_BR_MLK_R9975_rev35916\OEMBOARD\BreckenridgeMLK',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item',
-    #               'C:\Python_road\MyPython\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
-    gset.produce_gset_items_excel_file()
+    gs = Gset('c:\BIOS\Rugged2\99.0.50_Rev0803',
+              'c:\BIOS\Rugged2\99.0.50_Rev0803\OEMBOARD\Rugged2',
+              'C:\Code_in_Python\Exercise\Log_Guid_Transfer\Setup_Item',
+              'C:\Code_in_Python\Exercise\Log_Guid_Transfer\Setup_Item\external_files', False)
+    gs.produce_gset_items_excel_file()

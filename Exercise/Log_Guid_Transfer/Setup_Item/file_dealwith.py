@@ -1,37 +1,35 @@
 import re
+from data_dealwith import DataSave
 
 
 class FileDealWith(object):
-    output_folder = ''
-    oem_folder = ''
-    override_priority_list = []         # priority [1] > [0]
 
-    def __init__(self, original_file_list, original_file_list_name=0, active_override_file_list_name=0,
-                       remove_file_list_name=0, active_file_list_name=0):
+    def __init__(self, o_folder, p_folder, original_file_list, o_file_name=0):
         self.original_file_list = original_file_list
         self.active_file_dict = {}
         self.active_file_list = []
         self.active_override_file_list = []
         self.remove_file_list = []
+        self.o_folder = o_folder
+        self.p_folder = p_folder
+
+        data_list = self.p_folder.replace('/', ' ').replace('\\', ' ').split(' ')
+        # priority [1] > [0]
+        self.override_priority_list = [data_list[-2], data_list[-1]]
+
         self.buildup()
-        if original_file_list_name != 0:
-            FileDealWith.write_list_to_file(self.original_file_list, original_file_list_name)
-        if active_override_file_list_name != 0:
-            FileDealWith.write_list_to_file(self.active_override_file_list, active_override_file_list_name)
-        if remove_file_list_name != 0:
-            FileDealWith.write_list_to_file(self.remove_file_list, remove_file_list_name)
-        if active_file_list_name != 0:
-            FileDealWith.write_list_to_file(self.active_file_list, active_file_list_name)
 
-    def get_active_file_list(self):
-        return self.active_file_list
+        if o_file_name != 0:
+            DataSave.list_to_txt(self.original_file_list, o_folder, o_file_name + '_origin.txt')
+            DataSave.list_to_txt(self.active_override_file_list, o_folder, o_file_name + '_override.txt')
+            DataSave.list_to_txt(self.remove_file_list, o_folder, o_file_name + '_del.txt')
+            DataSave.list_to_txt(self.active_file_list, o_folder, o_file_name + '_final.txt')
 
-    @classmethod
-    def get_priority_number(cls, filepath):
+    def get_priority_number(self, file_path):
         override_priority = 0
-        if re.search(cls.override_priority_list[0], filepath, re.IGNORECASE):
+        if re.search(self.override_priority_list[0], file_path, re.IGNORECASE):
             override_priority = 16
-            if re.search(cls.override_priority_list[1], filepath, re.IGNORECASE):
+            if re.search(self.override_priority_list[1], file_path, re.IGNORECASE):
                 override_priority = 32
         return override_priority
 
@@ -61,36 +59,3 @@ class FileDealWith(object):
         for i in self.remove_file_list:
             del self.active_file_dict[i]
         self.active_file_list = list(self.active_file_dict.keys())
-
-    @classmethod
-    def update_output_folder(cls, output_folder, oem_folder):
-        cls.output_folder = output_folder
-        cls.oem_folder = oem_folder
-        if re.search('/', cls.oem_folder, re.IGNORECASE):
-            data_list = cls.oem_folder.replace('/', ' ').split(' ')
-        else:
-            data_list = cls.oem_folder.replace('\\', ' ').split(' ')
-        cls.override_priority_list = [data_list[-2], data_list[-1]]
-
-    @classmethod
-    def write_list_to_file(cls, w_list, w_file, encoding_mode=0):
-        if cls.output_folder == '':
-            w_path_file = w_file
-        else:
-            w_path_file = cls.output_folder + '\\' + w_file
-        if encoding_mode == 0:
-            mode = 'utf-8'
-        else:
-            mode = encoding_mode
-        with open(w_path_file, "w", encoding=mode) as wf:
-            for list_d in w_list:
-                if isinstance(list_d, list):
-                    for cell in list_d:
-                        if isinstance(cell, list):
-                            for sub_cell in cell:
-                                wf.write(str(sub_cell) + ' ')
-                        else:
-                            wf.write(str(cell) + ' ')
-                    wf.write('\n')
-                else:
-                    wf.write(list_d + '\n')
